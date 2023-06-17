@@ -45,7 +45,9 @@ Route::middleware(['auth:sanctum', 'abilities:admin'])->group(function () {
 
     // 
     Route::apiResource('startbonus' , StartBonusController::class);
-    Route::apiResource('money' , MoneyController::class);
+    Route::apiResource('money' , MoneyController::class)->except('show', 'index');
+    Route::get('/money/{userid}' , [MoneyController::class, 'index']);
+    Route::get('/money/{period}/{userid}' , [MoneyController::class, 'show']);
 // 
 
     Route::get('/getuniversalbonuses' , [UniversalBonusController::class, 'getUniversalBonuses']);

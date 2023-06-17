@@ -12,12 +12,12 @@
                     :space-between="10"
             >
                     <swiper-slide @click="changePeriod(index + 1)" v-for="(period, index) in user?.allperiods">
-                        <main :class="{'bg-pink-100 shadow !border-pink-200': activePeriod == (index + 1)}" class="border bg-gray-100 p-2 pt-0 border-transparent">
+                        <main :class="{'bg-pink-100 shadow !border-pink-200': activePeriod == (index + 1)}" class="border bg-gray-100 p-2 pt-0 border-transparent cursor-pointer hover:bg-pink-200">
                             <div class="flex justify-between items-center  mb-2 pt-1">
                                 <h3 class="text-sm text-gray-600 font-semibold">
                                     Mavsum {{ index + 1}} 
                                 </h3>
-                                <i :class="{'text-yellow-600': paymentPeriodToggle(index + 1)}" class="fal fa-check-circle text-gray-400 relative top-px"></i>
+                                <i :class="{'text-yellow-600': paymentPeriodToggle(index + 1) == 1, 'text-teal-600': paymentPeriodToggle(index + 1) == 2 }" class="fal fa-check-circle text-gray-400 relative top-px"></i>
                             </div>
                             <aside class="flex text-xs justify-between items-center">
                                 <div class="w-10 text-center bg-gray-200 rounded-sm overflow-hidden shadow">
@@ -45,7 +45,7 @@
                 </swiper>
                 <main class="flex justify-between my-5 items-end">
                     <div>
-                        <span class="font-semibold">Universal bonus {{ totalPrice }} + {{ startBonus }}</span>
+                        <span class="font-semibold">Universal bonus {{ totalPrice }} + {{ startBonus }} </span>
                     </div>
                 </main>
                 <vue-tree v-if="user" class="bg-stone-50 w-full h-[600px] shadow-inner" :dataset="vehicules"
@@ -72,14 +72,19 @@
                 <div class="h-[600px] bg-gray-100" v-else> 
 
                 </div>
-                <main class="flex justify-end items-center mt-4">
+                <main v-if="totalPrice + startBonus != 0" class="flex justify-end items-center mt-4">
                     <p v-if="payment != null" class="mr-5 text-green-600 font-semibold">
                         {{ payment?.summa }}$ To'landi
                     </p>
-                    <button :disabled="payment != null" @click="paymentMoney"
-                        :class="{'!bg-gray-200': payment != null}"
+                    <button :disabled="payment != null || payloader" @click="paymentMoney"
+                        :class="{'!bg-gray-200': payment != null || payloader}"
                         class="bg-pink-500 w-20 py-1 text-white">
-                        To'lov
+                        <span v-if="payloader == false">
+                            To'lov 
+                        </span>
+                        <span v-else>
+                            <i class="fal fa-spinner-third animate-spin"></i>
+                        </span>
                     </button>
                 </main>
             </section>
@@ -99,8 +104,14 @@ import axios from "axios";
 const activePeriod = ref(selectedUser.lastPeriod)
 const startBonuses = ref([])
 const payment = ref(null)
+const payloader = ref(false)
+
+const userAllPayments = ref([])
+
 const { selectedUser } = defineProps(['selectedUser'])
+
 const vehicules = reactive({ name: null, children: [] })
+
 const { levels, totalPrice, user, period, getSelectedPeoples } = Init(selectedUser.id, activePeriod.value)
 
 function changePeriod(period){
@@ -113,6 +124,11 @@ function changePeriod(period){
 
 axios.get('startbonus').then(({data}) => {
     startBonuses.value = data
+})
+
+
+axios.get(`money/${selectedUser.id}`).then(({data}) => {
+    userAllPayments.value = data
 })
 
 const startBonus = computed(() => {
@@ -131,26 +147,38 @@ watch(() => user.value, () => {
 
 
 function paymentMoney(){
+    payloader.value = true
     axios.post('money', {
         summa: totalPrice.value + startBonus.value,
         period: activePeriod.value,
         user_id: selectedUser.id
     }).then(({data}) => {
-        console.log(data);
+        setTimeout(() => {
+            payloader.value = false
+        }, 300)
+        userAllPayments.value.push(data)
+        payment.value = data
     })
 }
 
 function paymentPeriodToggle(period){
-    const select = startBonuses.value.find((elem) => elem.period == period)
-    console.log(select, period);
-    if(select) return true
-    else return false
+
+
+    const select = userAllPayments.value.find((elem) => elem.period == period)
+    if(select) {
+        if(select.check == true) return 2
+        else return 1
+    }
+    else return 0
+
+
+
 }
 
 
 
 function getPayment(){
-    axios.get(`money/${activePeriod.value}`).then(({data}) => {
+    axios.get(`money/${activePeriod.value}/${selectedUser.id}`).then(({data}) => {
         if(data.length == 0) return payment.value = null
         payment.value = data
     })

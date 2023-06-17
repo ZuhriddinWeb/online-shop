@@ -7,8 +7,15 @@ use App\Models\Money;
 class MoneyController extends Controller
 {
 
-    public function show($period){
-        return Money::where('period', $period)->first();
+    public function index($user_id){
+        return Money::where('user_id' , $user_id)->get();
+    }
+
+    public function show($period, $user_id){
+        return Money::where([
+            'period' => $period,
+            'user_id' => $user_id,
+        ])->first();
     }
 
 

@@ -38,6 +38,8 @@ __webpack_require__.r(__webpack_exports__);
     var activePeriod = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(selectedUser.lastPeriod);
     var startBonuses = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
     var payment = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(null);
+    var payloader = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(false);
+    var userAllPayments = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
     var vehicules = (0,vue__WEBPACK_IMPORTED_MODULE_4__.reactive)({
       name: null,
       children: []
@@ -58,6 +60,10 @@ __webpack_require__.r(__webpack_exports__);
       var data = _ref2.data;
       startBonuses.value = data;
     });
+    axios__WEBPACK_IMPORTED_MODULE_7__["default"].get("money/".concat(selectedUser.id)).then(function (_ref3) {
+      var data = _ref3.data;
+      userAllPayments.value = data;
+    });
     var startBonus = (0,vue__WEBPACK_IMPORTED_MODULE_4__.computed)(function () {
       var active = startBonuses.value.find(function (elem) {
         return elem.period == activePeriod.value;
@@ -73,25 +79,31 @@ __webpack_require__.r(__webpack_exports__);
       vehicules.childrenCount = user.value.children.length;
     });
     function paymentMoney() {
+      payloader.value = true;
       axios__WEBPACK_IMPORTED_MODULE_7__["default"].post('money', {
         summa: totalPrice.value + startBonus.value,
         period: activePeriod.value,
         user_id: selectedUser.id
-      }).then(function (_ref3) {
-        var data = _ref3.data;
-        console.log(data);
+      }).then(function (_ref4) {
+        var data = _ref4.data;
+        setTimeout(function () {
+          payloader.value = false;
+        }, 300);
+        userAllPayments.value.push(data);
+        payment.value = data;
       });
     }
     function paymentPeriodToggle(period) {
-      var select = startBonuses.value.find(function (elem) {
+      var select = userAllPayments.value.find(function (elem) {
         return elem.period == period;
       });
-      console.log(select, period);
-      if (select) return true;else return false;
+      if (select) {
+        if (select.check == true) return 2;else return 1;
+      } else return 0;
     }
     function getPayment() {
-      axios__WEBPACK_IMPORTED_MODULE_7__["default"].get("money/".concat(activePeriod.value)).then(function (_ref4) {
-        var data = _ref4.data;
+      axios__WEBPACK_IMPORTED_MODULE_7__["default"].get("money/".concat(activePeriod.value, "/").concat(selectedUser.id)).then(function (_ref5) {
+        var data = _ref5.data;
         if (data.length == 0) return payment.value = null;
         payment.value = data;
       });
@@ -107,6 +119,8 @@ __webpack_require__.r(__webpack_exports__);
       activePeriod: activePeriod,
       startBonuses: startBonuses,
       payment: payment,
+      payloader: payloader,
+      userAllPayments: userAllPayments,
       vehicules: vehicules,
       levels: levels,
       totalPrice: totalPrice,
@@ -362,6 +376,7 @@ var _hoisted_28 = {
   "class": "h-[600px] bg-gray-100"
 };
 var _hoisted_29 = {
+  key: 2,
   "class": "flex justify-end items-center mt-4"
 };
 var _hoisted_30 = {
@@ -369,6 +384,16 @@ var _hoisted_30 = {
   "class": "mr-5 text-green-600 font-semibold"
 };
 var _hoisted_31 = ["disabled"];
+var _hoisted_32 = {
+  key: 0
+};
+var _hoisted_33 = {
+  key: 1
+};
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fal fa-spinner-third animate-spin"
+}, null, -1 /* HOISTED */);
+var _hoisted_35 = [_hoisted_34];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _$setup$payment;
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", {
@@ -400,10 +425,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
               "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
                 'bg-pink-100 shadow !border-pink-200': $setup.activePeriod == index + 1
-              }, "border bg-gray-100 p-2 pt-0 border-transparent"])
+              }, "border bg-gray-100 p-2 pt-0 border-transparent cursor-pointer hover:bg-pink-200"])
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_6, " Mavsum " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(index + 1), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
               "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
-                'text-yellow-600': $setup.paymentPeriodToggle(index + 1)
+                'text-yellow-600': $setup.paymentPeriodToggle(index + 1) == 1,
+                'text-teal-600': $setup.paymentPeriodToggle(index + 1) == 2
               }, "fal fa-check-circle text-gray-400 relative top-px"])
             }, null, 2 /* CLASS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.getMonth(period[0])), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.getDay(period[0])), 1 /* TEXT */)]), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.getMonth(period[1])), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.getDay(period[1])), 1 /* TEXT */)])])], 2 /* CLASS */)];
           }),
@@ -431,13 +457,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(node.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(node.summaBranch), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(node.total), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(node.procent), 1 /* TEXT */)])]), node.childrenCount > 0 && collapsed ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_25, _hoisted_27)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["dataset"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_28)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_29, [$setup.payment != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_$setup$payment = $setup.payment) === null || _$setup$payment === void 0 ? void 0 : _$setup$payment.summa) + "$ To'landi ", 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    disabled: $setup.payment != null,
+  }, 8 /* PROPS */, ["dataset"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_28)), $setup.totalPrice + $setup.startBonus != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", _hoisted_29, [$setup.payment != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)((_$setup$payment = $setup.payment) === null || _$setup$payment === void 0 ? void 0 : _$setup$payment.summa) + "$ To'landi ", 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    disabled: $setup.payment != null || $setup.payloader,
     onClick: $setup.paymentMoney,
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
-      '!bg-gray-200': $setup.payment != null
+      '!bg-gray-200': $setup.payment != null || $setup.payloader
     }, "bg-pink-500 w-20 py-1 text-white"])
-  }, " To'lov ", 10 /* CLASS, PROPS */, _hoisted_31)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 32 /* HYDRATE_EVENTS */)], 32 /* HYDRATE_EVENTS */);
+  }, [$setup.payloader == false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_32, " To'lov ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_33, _hoisted_35))], 10 /* CLASS, PROPS */, _hoisted_31)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 32 /* HYDRATE_EVENTS */)], 32 /* HYDRATE_EVENTS */);
 }
 
 /***/ }),
