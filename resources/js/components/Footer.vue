@@ -4,7 +4,7 @@
 <div class="container py-8 px-6 mx-auto">
 
     <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
-    About
+    Aboutaa
 </a>
 
     <p class="mt-8 mb-8">This template is inspired by the stunning nordic minamalist design - in particular:
