@@ -12,6 +12,8 @@
                     <p><span><i class="fal fa-file-certificate text-orange-500 mr-4"></i></span> Mahsulot ma'lumotlarini kiritish</p>
                 </div>
                 <form class="w-full  mb-8 mt-8" @submit.prevent="onSubmit" enctype="multipart/form-data">
+                    <p>Mahsulot nomi:</p>
+                    <input v-model="result.product_name" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none" type="text" />     
                     <p>Mahsulot tipini tanlang:</p>
                     <select v-model="result.category_id" id="underline_select" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none">
                             <option v-for="team in tree_result" :value="team.id">
@@ -20,8 +22,6 @@
                         </select>
                             <p>Mahsulot hidini kiriting:</p>
                             <input v-model="result.flavor" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none" type="text" />                        
-                    <!-- <p>Mahsulot nomi:</p> -->
-                    <!-- <input v-model="result.product_name" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none" type="text" />      -->
                             <p>Mahsulot narxi:</p>
                             <input v-model="result.product_price" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none" type="text" />
                             <p>Mahsulot hajmi:</p>
@@ -32,7 +32,7 @@
                             <textarea v-model="result.product_descr" name="" id="" cols="30" rows="5" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none"></textarea>
                             <p>Mahsulot instruksiyasi:</p>
                             <textarea v-model="result.product_instr" name="" id="" cols="30" rows="5" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none"></textarea>
-                    <!-- <UploadImage :formData="result"/> -->
+                    <UploadImage :formData="result"/>
                     <div class="flex justify-between">
                         <button type="submit" class="bg-gray-100 w-1/2 py-1 px-4 mr-2 border-b-2 border-blue-500 hover:bg-blue-200">
                             <i class="far fa-layer-plus mx-2"></i>Saqlash
@@ -49,13 +49,14 @@
   
 <script setup>
 import { reactive, onMounted, ref } from "vue";
+import UploadImage from "./UploadImage.vue";
 import store from "../../store";
 const emit = defineEmits(['close'])
 const tree_result = ref(null);
 const usd_api = ref(null);
 
 const result = reactive({
-    // product_name:"",
+    product_name:"",
     category_id:"",
     flavor:"",
     tree_id:store.state.id_selected,
@@ -65,7 +66,7 @@ const result = reactive({
     product_descr:"",
     product_instr:"",
     usd_api:"",
-    // images: []
+    images: []
 });
 
 
@@ -73,21 +74,21 @@ axios.get(`category`).then((res) => {
       tree_result.value = res.data;
 })
 const onSubmit = async () => {
-    // const formdata = new FormData()
+    const formdata = new FormData()
 
 
-    // for (const key in result) {
+    for (const key in result) {
 
-    //     if(key == 'images'){
-    //         result.images.forEach(image => {
-    //             formdata.append('images[]', image)
-    //         })
-    //     }
-    //     else formdata.append(key, result[key])
+        if(key == 'images'){
+            result.images.forEach(image => {
+                formdata.append('images[]', image)
+            })
+        }
+        else formdata.append(key, result[key])
 
-    // }
+    }
 
-    const { data } = await axios.post("product-save", result);
+    const { data } = await axios.post("product-save", formdata);
     if (data.status == 200) {
         emit("added");
         emit("close");

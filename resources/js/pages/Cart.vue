@@ -3,9 +3,9 @@
         <Header />
     </header>
     <section class="w-full container mx-auto flex flex-col mt-0 py-3">
-        <p class="text-2xl font-semibold">Savat</p>
+        <p class="text-2xl font-semibold mx-2">Savat</p>
         <!-- {{ $store.state.user.id }} -->
-        <div class=" justify-between w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0" v-if="cart_user.length">
+        <div class=" justify-between w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 mx-2" v-if="cart_user.length">
             <main class="flex flex-col justify-between  mr-3 md:w-2/3 lg:w-w-4/5">
                 <div
                     class="flex justify-between font-medium uppercase border-t-2 border-b-2 py-4 bg-gray-50"
@@ -23,10 +23,10 @@
                     <div class="flex justify-start w-2/6 mr-2">
                         <main class="mr-4">
                             <img
-                                class="h-full w-full object-contain"
+                                class="h-full w-full"
                                 v-bind:src="
                                     '/images/' +
-                                    item.products?.category?.category_image
+                                    item.products?.images_product
                                 "
                             />
                         </main>

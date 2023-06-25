@@ -18,15 +18,15 @@ class CreateProductsTable extends Migration
             $table->uuid('product_id');
             $table->integer('category_id');
             $table->integer('tree_id');
-            // $table->string('product_name');
+            $table->string('product_name');
             $table->string('flavor');
             $table->text('description_product');
             $table->text('instruction_product');
             $table->double('price');
             $table->double('volume');
             $table->integer('count_products');
-            // $table->json('images_product')->nullable();
-            $table->string('images_product')->nullable();
+            $table->json('images_product')->nullable();
+            // $table->string('images_product')->nullable();
             $table->timestamps();
         });
     }

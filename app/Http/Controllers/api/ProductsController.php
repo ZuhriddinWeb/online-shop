@@ -40,31 +40,34 @@ class ProductsController extends Controller
     
     public function index_id($id)
     {
-        // dd($id);
-        return Products::find($id);
+        return Products::where('id',$id)->get();
     }
 
 
     public function limit(Request $request)
     {
-        $data= DB::table('products')
-        ->join('categories','products.category_id','=','categories.id')
-        ->orderByRaw('products.updated_at - products.created_at DESC')
-        ->take(10)
-        ->select('categories.id as cid','categories.category_name','categories.category_image','products.*')    
-        ->get();
-        return $data;
-    }
-    public function limit_category(Request $request,$id)
-    {
-        $data=DB::table('products')
-        ->join('categories','products.category_id','=','categories.id')
+        // $data= DB::table('products')
+        // ->join('categories','products.category_id','=','categories.id')
         // ->orderByRaw('products.updated_at - products.created_at DESC')
-        ->where('products.category_id','=',$id)
-        ->take(5)
-        ->select('categories.id as cid','categories.category_name','products.*')    
-        ->get();
-        return $data;
+        // ->take(10)
+        // ->select('categories.id as cid','categories.category_name','categories.category_image','products.*')    
+        // ->get();
+        // return $data;
+        return Products::orderByRaw('products.updated_at - products.created_at DESC')->take(5)->get();
+
+    }
+    public function limit_category($id)
+    {
+        
+        // $data=DB::table('products')
+        // // ->join('categories','products.category_id','=','categories.id')
+        // // ->orderByRaw('products.updated_at - products.created_at DESC')
+        // ->where('products.category_id','=',$id)
+        // ->take(5)
+        // // ->select('categories.id as cid','categories.category_name','products.*')    
+        // ->get();
+        // return $data;
+        return Products::where('category_id',$id)->take(5)->get();
     }
     /**
      * Show the form for creating a new resource.
@@ -86,30 +89,30 @@ class ProductsController extends Controller
     {
         // dd($request);
         $data = new Products();   
-        // $images = $request->images;
-        // $array_image=[];
+        $images = $request->images;
+        $array_image=[];
         // $array_image;           
 
 
-        // for($i=0;$i<count($images);$i++){
-        //     $imageName = time().$i.'.'.$images[$i]->extension(); 
-        //     $images[$i]->move(public_path('images'), $imageName);
-        //     $array_image=$imageName;
-        //     // array_push($array_image,$imageName);
-        // }
+        for($i=0;$i<count($images);$i++){
+            $imageName = time().$i.'.'.$images[$i]->extension(); 
+            $images[$i]->move(public_path('images'), $imageName);
+            $array_image=$imageName;
+            array_push($array_image,$imageName);
+        }
 
         $unique = (string) Str::uuid();
         $data->product_id = $unique;
         $data->category_id = $request->input('category_id');
         $data->tree_id = $request->input('tree_id');
-        // $data->product_name = $request->input('product_name');
+        $data->product_name = $request->input('product_name');
         $data->flavor = $request->input('flavor');
         $data->description_product = $request->input('product_descr');       
         $data->instruction_product = $request->input('product_instr');       
         $data->price = $request->input('product_price');
         $data->volume = $request->input('volume');       
         $data->count_products = $request->input('product_count'); 
-        // $data->images_product = $array_image; 
+        $data->images_product = $array_image; 
 
         $data->save();
         return response()->json([
