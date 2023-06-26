@@ -98,7 +98,7 @@ class ProductsController extends Controller
             $imageName = time().$i.'.'.$images[$i]->extension(); 
             $images[$i]->move(public_path('images'), $imageName);
             $array_image=$imageName;
-            array_push($array_image,$imageName);
+            // array_push($array_image,$imageName);
         }
 
         $unique = (string) Str::uuid();

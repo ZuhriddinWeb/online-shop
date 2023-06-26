@@ -19,12 +19,12 @@
                 <div class="w-full">
                 <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
                     <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                    <a class="text-xs font-bold uppercase px-5 py-3 shadow  block leading-normal cursor-pointer rounded-sm" v-on:click="toggleTabs(1)" v-bind:class="{'text-orange-500 bg-white': openTab !== 1, 'text-white bg-orange-500': openTab === 1}">
+                    <a class="text-xs font-bold uppercase px-5 py-3 shadow  block leading-normal cursor-pointer rounded-sm" v-on:click="toggleTabs(2)" v-bind:class="{'text-orange-500 bg-white': openTab !== 1, 'text-white bg-orange-500': openTab === 1}">
                         <i class="fas fa-space-shuttle text-base mr-1"></i> Tizimga kirish
                     </a>
                     </li>
                     <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                    <a class="text-xs font-bold uppercase px-5 py-3 shadow  block leading-normal cursor-pointer rounded-sm" v-on:click="toggleTabs(2)" v-bind:class="{'text-orange-500 bg-white': openTab !== 2, 'text-white bg-orange-500': openTab === 2}">
+                    <a class="text-xs font-bold uppercase px-5 py-3 shadow  block leading-normal cursor-pointer rounded-sm" v-on:click="toggleTabs(1)" v-bind:class="{'text-orange-500 bg-white': openTab !== 2, 'text-white bg-orange-500': openTab === 2}">
                         <i class="fas fa-cog text-base mr-1"></i> Ro'yxatdan o'tish
                     </a>
                     </li>       
@@ -32,7 +32,7 @@
                 <div class="relative flex flex-col min-w-0 break-words w-full mb-6 ">
                     <div class="flex-auto">
                     <div class="tab-content tab-space">
-                        <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}" >
+                        <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}" >
                                 <form class="flex flex-col justify-center mt-4" autocomplete="off" @submit.prevent="onLogin">
                                     <input  v-model="result_login.phone" type="text" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none" placeholder="ID/Телефон">
                                     <input  v-model="result_login.password" type="password" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none" placeholder="Парол">
@@ -44,7 +44,7 @@
                                     <p class="cursor-pointer">Забыли пароль?</p>
                                 </article> -->
                         </div>
-                        <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
+                        <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
                                 <form class="flex flex-col justify-center mt-4" @submit.prevent="onRegistration">
                                     <input v-model="result.fname" type="text" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none" placeholder="Ism">
                                     <input v-model="result.lname" type="text" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none" placeholder="Familiya">
@@ -96,10 +96,12 @@ const result_login = reactive({
 });
 const onRegistration = async () => {
     var k = Math.random().toString(36).slice(2);
-    console.log(k);
+    // console.log(k);
     const { data } = await axios.post("regstration", result);
     if (data.status == 200) {
-        store.state.opened
+        // console.log(openTab.value);
+        // store.state.opened
+        // return openTab.value=2
     }
 };
 const onLogin = async () => {

@@ -27,13 +27,10 @@
 				</label>
 			</main>
 		</div>
-
 	</section>
 </template>
 <script setup>
 import { ref , reactive } from 'vue'
-
-
 
 const emit = defineEmits(['change-file'])
 const { formData } = defineProps(['formData'])

@@ -78,7 +78,10 @@ class UserController extends Controller
             'password' => Hash::make($res['password']),
         ]);
 
-        return response()->json(true, 200);
+        return response()->json([
+            'status' => 200,
+            'message' => "User muvafaqiyatli qo'shildi",
+        ]);
     }
 
     public function logout(Request $request)
