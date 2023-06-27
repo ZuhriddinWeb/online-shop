@@ -33,7 +33,7 @@
                              </div>
                              <div class="bg-gray-100 rounded-sm w-1/2 mx-1 my-1">
                                  <p class="flex justify-between flex-col">
-                                     <span class="py-2 px-2">Ball:{{ my_cashback?.cashback }}</span>
+                                     <span class="py-2 px-2">Cashback:{{ my_cashback?.cashback }}</span>
                                      <span></span>
                                  </p>
                              </div>
