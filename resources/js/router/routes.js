@@ -3,6 +3,15 @@ export default [
 		path: '/',
 		name:'home',
 		component: () => import('../pages/Home.vue'),
+		children: [
+			{
+				path: '/register/:id',
+				name:'register',
+				component: () => import('../components/Sidebar.vue'),
+				props: true,
+				
+			},
+		]
 	},
 	{
 		path: '/eshop',
@@ -17,13 +26,7 @@ export default [
 			guard: 'auth',
 		},
 	},
-	{
-		path: '/register/:id',
-		name:'register',
-		component: () => import('../components/Sidebar.vue'),
-		props: true,
-		
-	},
+	
 	
 	{
 		path: '/profile',

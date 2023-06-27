@@ -8,7 +8,7 @@
                         <i  class="fal fa-times cursor-pointer text-2xl hover:text-red-600"></i>
                     </button> -->
                 </div>
-                <main class="flex flex-col  mt-56 mx-8">
+                <main class="flex flex-col mt-24 mx-8">
                     <div class="flex justify-center text-3xl">
                         <div v-if="openTab==2">
                             <p>Войти</p>
