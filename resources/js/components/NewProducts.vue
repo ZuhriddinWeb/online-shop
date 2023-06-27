@@ -45,7 +45,7 @@
             <router-link v-for="item,index in new_products" :to="{name:'product-view', params: {id: item.id}}"  class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col px-2  cursor-pointer border-gray-50" >
                 <div class="w-full p-4 flex flex-col bg-white my-2 rounded-sm border border-gray-100 hover:shadow-lg" >
                     <main class="-m-4 mb-3 relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-full h-full bg-black/20"></div>
+                        <div class="absolute top-0 left-0 w-full h-full bg-black/10"></div>
                         <img class="h-[180px] w-full object-contain" v-bind:src="'/images/' + item.images_product" />
                         <!-- <img class=" h-[180px] w-full object-contain " src="https://static.tildacdn.com/stor6464-3731-4561-b439-353734643438/80317068.jpg" alt=""> -->
                     </main>
