@@ -39,7 +39,8 @@
                              </div>
                         </div>
                         <article class="flex justify-between bg-gray-100 rounded-sm  mx-1 my-1 items-center">
-                            <span class="mx-1">4ever.uz/register?e314</span>
+                            <input @keyup.alt.67="YourFn" class="w-5/6" type="text" :value="'www.4ever.uz/register/'+$store.state.user.promo_code" disabled>
+                            <span class="mx-1"></span>
                             <i class="fal fa-copy mx-1 hover:text-green-500"></i>
                         </article>
 

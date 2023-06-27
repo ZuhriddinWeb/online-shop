@@ -39,10 +39,13 @@
                     </router-link>     -->
                     <router-link v-if="$store.state.user" class="inline-block no-underline hover:border-b-1 border-orange-500 " to="/profile">                        
                         <i class="fal fa-user-circle text-2xl"></i>                           
-                    </router-link>    
-                    <button v-else @click="emit('open')" class="inline-block no-underline hover:text-black" href="#" :class="{ 'justify-end relative': $store.state.opened }">                   
+                    </router-link>  
+                    <router-link v-else class="inline-block no-underline hover:border-b-1 border-orange-500 "  @click="emit('open')" :class="{ 'justify-end relative': $store.state.opened }" to="/register">                        
+                        <i class="fal fa-user-circle text-2xl"></i>                           
+                    </router-link>  
+                    <!-- <button v-else @click="emit('open')" class="inline-block no-underline hover:text-black" href="#" :class="{ 'justify-end relative': $store.state.opened }">                   
                         <i class="fal fa-user-circle text-2xl"></i>
-                    </button> 
+                    </button>  -->
                     <router-link  @click="emit('open')" class="inline-block no-underline hover:border-b-1 border-orange-500 " to="/cart">                        
                         <i class="fal fa-cart-plus text-2xl pl-8 relative">
                             <span class="bg-rose-500 w-4 h-4 absolute rounded-full text-sm text-center text-white">

@@ -18,6 +18,14 @@ export default [
 		},
 	},
 	{
+		path: '/register/:id',
+		name:'register',
+		component: () => import('../components/Sidebar.vue'),
+		props: true,
+		
+	},
+	
+	{
 		path: '/profile',
 		name:'profile',
 		component: () => import('../pages/Profile.vue'),

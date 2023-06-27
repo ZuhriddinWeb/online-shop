@@ -174,6 +174,7 @@ function toggleTabs(tabNumber) {
 }
 
 const product_id = defineProps(["id", "product_id"]);
+
 const currentProduct = ref({});
 
 function add_cart_user(id_product) {
