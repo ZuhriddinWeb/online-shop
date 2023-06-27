@@ -58,10 +58,12 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "flex justify-between bg-pink-300 mx-2"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-col justify-between\"><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p></div><div class=\"flex flex-col justify-between\"><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p><p>Mustafoyev Zuhriddin</p></div>", 2);
-var _hoisted_4 = [_hoisted_2];
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "flex flex-col justify-between"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Test"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p>\r\n        </div>\r\n        <div class=\"flex flex-col justify-between\">\r\n            <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p>\r\n            <p>Mustafoyev Zuhriddin</p> ")], -1 /* HOISTED */);
+var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, _hoisted_4);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, _hoisted_3);
 }
 
 /***/ }),
@@ -78,13 +80,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _MyInfo_vue_vue_type_template_id_055e4895__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MyInfo.vue?vue&type=template&id=055e4895 */ "./resources/js/pages/profilepages/MyInfo.vue?vue&type=template&id=055e4895");
 /* harmony import */ var _MyInfo_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MyInfo.vue?vue&type=script&setup=true&lang=js */ "./resources/js/pages/profilepages/MyInfo.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MyInfo_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MyInfo_vue_vue_type_template_id_055e4895__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/profilepages/MyInfo.vue"]])
+const __exports__ = /*#__PURE__*/(0,E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MyInfo_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MyInfo_vue_vue_type_template_id_055e4895__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/profilepages/MyInfo.vue"]])
 /* hot reload */
 if (false) {}
 

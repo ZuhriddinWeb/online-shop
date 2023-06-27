@@ -1,7 +1,8 @@
 <template>       
      <section class="flex justify-between bg-pink-300 mx-2">
         <div class="flex flex-col justify-between">
-            <p>Mustafoyev Zuhriddin</p>
+            <p>Test</p>
+            <!-- <p>Mustafoyev Zuhriddin</p>
             <p>Mustafoyev Zuhriddin</p>
             <p>Mustafoyev Zuhriddin</p>
             <p>Mustafoyev Zuhriddin</p>
@@ -12,7 +13,7 @@
             <p>Mustafoyev Zuhriddin</p>
             <p>Mustafoyev Zuhriddin</p>
             <p>Mustafoyev Zuhriddin</p>
-            <p>Mustafoyev Zuhriddin</p>
+            <p>Mustafoyev Zuhriddin</p> -->
         </div>
      </section>
 </template>
