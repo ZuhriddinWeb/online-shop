@@ -38,13 +38,7 @@
                             </p>
                         </div>
                     </div>
-                    <article class="flex justify-between bg-gray-100 rounded-sm  mx-1 my-1 items-center">
-                        <ShareNetwork network="facebook" url="https://news.vuejs.org/issues/180"
-                            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                            description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                            quote="The hot reload is so fast it\'s near instant. - Evan You" hashtags="vuejs,vite">
-                            Share on Facebook
-                        </ShareNetwork>
+                    <article class="flex justify-between bg-gray-100 rounded-sm  mx-1 my-1 items-center">                        
                         <input @keyup.alt.67="YourFn" class="w-5/6" type="text"
                             :value="'www.4ever.uz/register/' + $store.state.user.promo_code" disabled>
                         <span class="mx-1"></span>
@@ -117,7 +111,6 @@
 <script setup>
 import Header from "../components/Header.vue"
 import { reactive, ref } from "vue";
-import VueSocialSharing from 'vue-social-sharing'
 const add_Check = ref(null);
 const my_orders = ref(null);
 const my_peoples = ref(null);

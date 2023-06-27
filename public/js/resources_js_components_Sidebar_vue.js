@@ -167,7 +167,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "text-black flex justify-between pb-4 pr-4"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button @click=\"emit('close')\">\r\n                        <i  class=\"fal fa-times cursor-pointer text-2xl hover:text-red-600\"></i>\r\n                    </button> ")], -1 /* HOISTED */);
 var _hoisted_3 = {
-  "class": "flex flex-col mt-24 mx-8"
+  "class": "flex flex-col mt-20 mx-8"
 };
 var _hoisted_4 = {
   "class": "flex justify-center text-3xl"
