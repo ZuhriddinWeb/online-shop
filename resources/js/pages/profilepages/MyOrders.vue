@@ -39,9 +39,9 @@
                                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                       To'lov
                                    </th>
-                                   <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                   <!-- <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                        Funksiyalar
-                                   </th>
+                                   </th> -->
                                </tr>
                                </thead>
                                <tbody>
@@ -74,14 +74,14 @@
                                         </span>
                                         </button>
                                     </td>
-                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                    <!-- <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <button class="bg-violet-500 text-white" @click="order_info=true,$store.state.id_selected=item.id">
                                            <span class="px-4 text-lg rounded-sm hover:bg-violet-600">
                                             <i class="fal fa-list-ul mr-1"></i>
                                             Batafsil
                                         </span>
                                         </button>
-                                    </td>
+                                    </td> -->
                                                   
                                    </tr>                                   
                                </tbody>

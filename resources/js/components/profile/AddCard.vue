@@ -3,7 +3,7 @@
         @click="$emit('close')"
         class="fixed top-0 left-0 z-40 w-full h-full bg-black bg-opacity-40 flex justify-center items-center p-20"
     >
-    <section @click.stop class="bg-white shadow h-3/5 xl:w-[500px] rounded-sm md:w-[350px]">
+    <section @click.stop class="bg-white shadow h-4/5 xl:w-[500px] rounded-sm md:w-[320px]">
             <div class="text-right flex flex-col h-full">
                 <main class="flex  justify-between w-full items-center bg-gray-100 shadow-sm">
                     <div class="flex justify-between p-2 w-full">
@@ -17,10 +17,10 @@
                         </div>
                     </div>
                 </main>
-                <article class="flex justify-center w-full h-full">
+                <article class="flex justify-center w-full">
                     <form class="mb-8 mt-8 mx-2" @submit.prevent="onSubmit" enctype="multipart/form-data">
                         <div class=" text-white">
-                            <main class="w-1/2 shadow shadow-gray-400 flex flex-col justify-center text-xl min-w-[360px] h-[240px] rounded-xl bg-gray-500">
+                            <main class="w-1/2 shadow shadow-gray-400 flex flex-col justify-center text-xl min-w-[315px] h-[225px] rounded-xl bg-gray-500">
                                 <div class="flex mx-4 my-4 font-medium" >
                                     <input v-model="result.number" placeholder="Karta raqami" class="text-sm mb-2 appearance-none bg-transparent w-full text-white mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none" type="text" />
                                 </div>

@@ -155,14 +155,14 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, null, -1 /* HOISTED */);
 var _hoisted_7 = [_hoisted_6];
 var _hoisted_8 = {
-  "class": "flex justify-center w-full h-full"
+  "class": "flex justify-center w-full"
 };
 var _hoisted_9 = ["onSubmit"];
 var _hoisted_10 = {
   "class": "text-white"
 };
 var _hoisted_11 = {
-  "class": "w-1/2 shadow shadow-gray-400 flex flex-col justify-center text-xl min-w-[360px] h-[240px] rounded-xl bg-gray-500"
+  "class": "w-1/2 shadow shadow-gray-400 flex flex-col justify-center text-xl min-w-[315px] h-[225px] rounded-xl bg-gray-500"
 };
 var _hoisted_12 = {
   "class": "flex mx-4 my-4 font-medium"
@@ -194,7 +194,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "fixed top-0 left-0 z-40 w-full h-full bg-black bg-opacity-40 flex justify-center items-center p-20"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
     onClick: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["stop"])),
-    "class": "bg-white shadow h-3/5 xl:w-[500px] rounded-sm md:w-[350px]"
+    "class": "bg-white shadow h-4/5 xl:w-[500px] rounded-sm md:w-[320px]"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return _ctx.$emit('close');
@@ -247,10 +247,10 @@ var _hoisted_2 = {
   "class": "flex justify-between md:w-full"
 };
 var _hoisted_3 = {
-  "class": "flex flex-col justify-start items-center text-white md:w-full"
+  "class": "flex flex-col justify-start items-center text-white md:w-full md:flex-row md:space-x-4 md:space-y-0"
 };
 var _hoisted_4 = {
-  "class": "shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr from-green-600 to-green-400 md:w-full"
+  "class": "shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr from-green-600 to-green-400"
 };
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex justify-start mx-8 my-4 font-thin"

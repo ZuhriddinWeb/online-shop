@@ -42,8 +42,8 @@
                         <input v-on:focus="$event.target.select()" class="w-5/6 outline-0" ref="generator" :value="'www.4ever.uz/register/' + $store.state.user.promo_code" id="generator"
                             type="text" readonly>
                         <span class="mx-1"></span>
-                        <a id="copyToClipboard" v-on:click.prevent="copyToClipboard">
-                            <span >
+                        <a id="copyToClipboard" v-on:click.prevent="copyToClipboard" class="cursor-pointer">
+                            <span>
                                 <i class="fal fa-copy mx-1 hover:text-green-500"></i>
                             </span>
                         </a>

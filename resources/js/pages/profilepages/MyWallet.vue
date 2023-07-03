@@ -3,9 +3,9 @@
     <div>
         <h3 class="text-3xl h-28 ">Kartalar</h3>
         <main class="flex justify-between md:w-full">
-            <div class="flex flex-col justify-start items-center text-white md:w-full">
+            <div class="flex flex-col justify-start items-center text-white md:w-full md:flex-row md:space-x-4 md:space-y-0">
                 <main
-                    class="shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr  from-green-600 to-green-400 md:w-full">
+                    class="shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr  from-green-600 to-green-400 ">
                     <div class="flex justify-start mx-8 my-4 font-thin">4Ever.uz</div>
                     <div class="flex mx-8 my-4 font-medium" v-for="number in card_number">
                         <p>{{ number.number }}</p>

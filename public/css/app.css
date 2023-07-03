@@ -827,6 +827,9 @@ video {
 .h-\[225px\] {
   height: 225px;
 }
+.h-4\/5 {
+  height: 80%;
+}
 .w-1\/2 {
   width: 50%;
 }
@@ -1993,6 +1996,10 @@ video {
 
   .md\:w-\[350px\] {
     width: 350px;
+  }
+
+  .md\:w-\[320px\] {
+    width: 320px;
   }
 
   .md\:flex-row {
