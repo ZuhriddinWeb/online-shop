@@ -1,14 +1,14 @@
 <template>
     <section @click="emit('close')" class="flex justify-end fixed top-0 left-0 w-full h-full  bg-black bg-opacity-30 z-40">
-        <aside @click.stop class="md:w-full justify-between h-full overflow-hidden p-4 pr-0 bg-gray-50 shadow">
+        <aside @click.stop class="md:w-full justify-between h-full overflow-hidden p-4 pr-0 bg-gray-50 shadow overflow-scroll">
             <div class="menu flex flex-col justify-between">
                 <div class="text-black flex justify-between pb-4 pr-4">
                     <span></span>
-                    <!-- <button @click="emit('close')">
+                    <button @click="emit('close')">
                         <i  class="fal fa-times cursor-pointer text-2xl hover:text-red-600"></i>
-                    </button> -->
+                    </button>
                 </div>
-                <main class="flex flex-col mt-20 mx-8">
+                <main class="flex flex-col mt-4 mx-8">
                     <div class="flex justify-center text-3xl">
                         <div v-if="openTab==2">
                             <p>Войти</p>
@@ -165,12 +165,8 @@ const result_login = reactive({
 });
 const onRegistration = async () => {
     var k = Math.random().toString(36).slice(2);
-    // console.log(k);
     const { data } = await axios.post("regstration", result);
     if (data.status == 200) {
-        // console.log(openTab.value);
-        // store.state.opened
-        // return openTab.value=2
         Swal.fire({
             position: 'top-center',
             icon: 'success',

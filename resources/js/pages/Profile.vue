@@ -4,7 +4,7 @@
     </header>
 
 
-    <div class=" container mx-auto bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+    <div class="container mx-auto bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
         <main class="sm:w-3/3 md:w-2/3  lg:w-1/4 px-5 py-4">
             <div class="flex flex-col border-b-2">
                 <div class="flex justify-start  py-6 px-4">
@@ -38,13 +38,16 @@
                             </p>
                         </div>
                     </div>
-                    <article class="flex justify-between bg-gray-100 rounded-sm  mx-1 my-1 items-center">                        
-                        <input @keyup.alt.67="YourFn" class="w-5/6" type="text"
-                            :value="'www.4ever.uz/register/' + $store.state.user.promo_code" disabled>
+                    <article class="flex justify-between  rounded-sm  mx-1 my-1 items-center">
+                        <input v-on:focus="$event.target.select()" class="w-5/6 outline-0" ref="generator" :value="'www.4ever.uz/register/' + $store.state.user.promo_code" id="generator"
+                            type="text" readonly>
                         <span class="mx-1"></span>
-                        <i class="fal fa-copy mx-1 hover:text-green-500"></i>
+                        <a id="copyToClipboard" v-on:click.prevent="copyToClipboard">
+                            <span >
+                                <i class="fal fa-copy mx-1 hover:text-green-500"></i>
+                            </span>
+                        </a>
                     </article>
-
                 </main>
             </div>
             <article class="flex justify-start  py-6 px-4 hover:shadow cursor-pointer">
@@ -116,11 +119,21 @@ const my_orders = ref(null);
 const my_peoples = ref(null);
 const my_cashback = ref(null);
 const my_info = ref(true);
-
+const generator = ref(null)
 axios.get(`cashback`).then(({ data }) => {
     my_cashback.value = data;
 })
-
+function copyToClipboard() {
+    generator.value.focus()
+    document.execCommand('copy');
+    Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Referal link nusxalandi!',
+            showConfirmButton: false,
+            timer: 2000
+    })
+}
 
 </script>
 <style>

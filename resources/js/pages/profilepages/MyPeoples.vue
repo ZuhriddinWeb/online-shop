@@ -18,7 +18,7 @@
                 </select>
             </div>
         </main>
-        <vue-tree v-if="user" class="bg-stone-50 w-full h-[700px] shadow-inner" :dataset="vehicules" :config="{ nodeWidth: 150, nodeHeight: 80, levelHeight: 200 }" linkStyle="straight">
+        <vue-tree :ref="tree"  @wheel="HandleChartZoom" v-if="user" class="bg-stone-50 w-full h-[700px] shadow-inner" :dataset="vehicules" :config="{ nodeWidth: 150, nodeHeight: 80, levelHeight: 200 }" linkStyle="straight">
             <template v-slot:node="{ node, collapsed }">
                 <div class="bg-white border-t-2 border-pink-500 w-32 px-2 pt-1 pb-2 shadow relative">
                     <main class="flex flex-col px-1">
@@ -46,7 +46,12 @@ import { reactive, ref, watch } from "vue"
 import { Init } from '../../helpers/userAccount'
 const vehicules = reactive({ name: null, children: [] })
 const { levels, totalPrice, user, period , changePeriod } = Init(null, store.state.user.lastPeriod)
+const tree = ref(null);
 
+function HandleChartZoom(){
+    tree.value.zoomIn()
+    tree.value.zoomOut()
+}
 watch(() => user.value, () => {
     vehicules.name = user.value.fname
     vehicules.total = user.value.periodSumma

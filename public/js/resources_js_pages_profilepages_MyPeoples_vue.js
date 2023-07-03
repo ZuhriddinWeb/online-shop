@@ -35,6 +35,11 @@ __webpack_require__.r(__webpack_exports__);
       user = _Init.user,
       period = _Init.period,
       changePeriod = _Init.changePeriod;
+    var tree = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(null);
+    function HandleChartZoom() {
+      tree.value.zoomIn();
+      tree.value.zoomOut();
+    }
     (0,vue__WEBPACK_IMPORTED_MODULE_2__.watch)(function () {
       return user.value;
     }, function () {
@@ -55,6 +60,8 @@ __webpack_require__.r(__webpack_exports__);
       user: user,
       period: period,
       changePeriod: changePeriod,
+      tree: tree,
+      HandleChartZoom: HandleChartZoom,
       universalBonus: universalBonus,
       get VueTree() {
         return (_ssthouse_vue3_tree_chart__WEBPACK_IMPORTED_MODULE_0___default());
@@ -170,6 +177,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(period) + " Mavsum", 9 /* TEXT, PROPS */, _hoisted_12);
   }), 256 /* UNKEYED_FRAGMENT */))], 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.period]])])]), $setup.user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["VueTree"], {
     key: 0,
+    ref: $setup.tree,
+    onWheel: $setup.HandleChartZoom,
     "class": "bg-stone-50 w-full h-[700px] shadow-inner",
     dataset: $setup.vehicules,
     config: {
@@ -372,7 +381,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MyPeoples_vue_vue_type_template_id_f93bfca6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MyPeoples.vue?vue&type=template&id=f93bfca6 */ "./resources/js/pages/profilepages/MyPeoples.vue?vue&type=template&id=f93bfca6");
 /* harmony import */ var _MyPeoples_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MyPeoples.vue?vue&type=script&setup=true&lang=js */ "./resources/js/pages/profilepages/MyPeoples.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _MyPeoples_vue_vue_type_style_index_0_id_f93bfca6_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MyPeoples.vue?vue&type=style&index=0&id=f93bfca6&lang=css */ "./resources/js/pages/profilepages/MyPeoples.vue?vue&type=style&index=0&id=f93bfca6&lang=css");
-/* harmony import */ var D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -380,7 +389,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_MyPeoples_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MyPeoples_vue_vue_type_template_id_f93bfca6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/profilepages/MyPeoples.vue"]])
+const __exports__ = /*#__PURE__*/(0,E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_MyPeoples_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MyPeoples_vue_vue_type_template_id_f93bfca6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/profilepages/MyPeoples.vue"]])
 /* hot reload */
 if (false) {}
 
