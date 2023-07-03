@@ -4,7 +4,7 @@
             <span>Darajangiz:</span><span class="text-teal-500 pl-2">{{ $store.state.statuses[levels - 1] }} </span>
         </h3>
         <h3 class="text-xl font-semibold">
-           <span>{{ period }} mavsum uchun pul miqdori:</span><span class="text-teal-500 pl-2">{{ totalPrice }}</span>
+            <span>{{ period }} mavsum uchun pul miqdori:</span><span class="text-teal-500 pl-2">{{ totalPrice }}</span>
         </h3>
         <main class="flex justify-between mb-5 items-end">
             <div>
@@ -18,16 +18,26 @@
                 </select>
             </div>
         </main>
-        <vue-tree :ref="tree"  @wheel="HandleChartZoom" v-if="user" class="bg-stone-50 w-full h-[700px] shadow-inner" :dataset="vehicules" :config="{ nodeWidth: 150, nodeHeight: 80, levelHeight: 200 }" linkStyle="straight">
+
+        <div class="flex justify-start mb-2">
+            <button @click="HandleChartZoomIn()" >
+                <i class="fal fa-search-plus text-xl mr-4 p-4"></i>
+            </button>
+            <button @click="HandleChartZoomOut()" >
+                <i class="fal fa-search-minus text-xl ml-6"></i>
+            </button>
+        </div>
+        <vue-tree ref="tree" v-if="user" class="bg-stone-50 w-full h-[700px] shadow-inner " :dataset="vehicules"
+            :config="{ nodeWidth: 150, nodeHeight: 80, levelHeight: 200 }" linkStyle="straight">
             <template v-slot:node="{ node, collapsed }">
                 <div class="bg-white border-t-2 border-pink-500 w-32 px-2 pt-1 pb-2 shadow relative">
                     <main class="flex flex-col px-1">
                         <div class="flex justify-between items-center w-full">
-                            <span class="text-gray-500 text-md font-semibold">{{ node.name }}</span>
+                            <span class="text-gray-500 text-md font-semibold" >{{ node.name }}</span>
                             <span class="text-pink-500 text-md ">{{ node.summaBranch }}</span>
                         </div>
                         <div class="flex justify-between items-center w-full">
-                            <span class="text-gray-500 text-xs">{{ node.total  }}</span>
+                            <span class="text-gray-500 text-xs">{{ node.total }}</span>
                             <span class="text-gray-500 text-xs">{{ node.procent }}</span>
                         </div>
                     </main>
@@ -45,12 +55,14 @@ import "@ssthouse/vue3-tree-chart/dist/vue3-tree-chart.css"
 import { reactive, ref, watch } from "vue"
 import { Init } from '../../helpers/userAccount'
 const vehicules = reactive({ name: null, children: [] })
-const { levels, totalPrice, user, period , changePeriod } = Init(null, store.state.user.lastPeriod)
+const { levels, totalPrice, user, period, changePeriod } = Init(null, store.state.user.lastPeriod)
 const tree = ref(null);
 
-function HandleChartZoom(){
-    tree.value.zoomIn()
+function HandleChartZoomOut() {
     tree.value.zoomOut()
+}
+function HandleChartZoomIn() {
+    tree.value.zoomIn()
 }
 watch(() => user.value, () => {
     vehicules.name = user.value.fname
@@ -65,8 +77,8 @@ axios.get(`getuniversalbonuses`).then(({ data }) => {
 })
 </script>
 <style>
-.tree-container .link{
-    stroke-width: 1px!important;
-    stroke: #ee5fa6!important;
+.tree-container .link {
+    stroke-width: 1px !important;
+    stroke: #ee5fa6 !important;
 }
 </style>

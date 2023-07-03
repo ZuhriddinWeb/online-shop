@@ -3,7 +3,7 @@
         @click="$emit('close')"
         class="fixed top-0 left-0 z-40 w-full h-full bg-black bg-opacity-40 flex justify-center items-center p-20"
     >
-    <section @click.stop class="bg-white shadow h-3/5 w-[500px] rounded-sm">
+    <section @click.stop class="bg-white shadow h-3/5 xl:w-[500px] rounded-sm md:w-[350px]">
             <div class="text-right flex flex-col h-full">
                 <main class="flex  justify-between w-full items-center bg-gray-100 shadow-sm">
                     <div class="flex justify-between p-2 w-full">

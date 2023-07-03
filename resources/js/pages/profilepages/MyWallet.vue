@@ -2,10 +2,10 @@
     <AddCard @close="add_card = null" :selectedDataEdit="add_card" v-if="add_card" />
     <div>
         <h3 class="text-3xl h-28 ">Kartalar</h3>
-        <main class="flex justify-between">
-            <div class="w-1/2 flex justify-start items-center text-white">
+        <main class="flex justify-between md:w-full">
+            <div class="flex flex-col justify-start items-center text-white md:w-full">
                 <main
-                    class="shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[360px] h-[240px] rounded-xl bg-gradient-to-tr  from-green-600 to-green-400">
+                    class="shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr  from-green-600 to-green-400 md:w-full">
                     <div class="flex justify-start mx-8 my-4 font-thin">4Ever.uz</div>
                     <div class="flex mx-8 my-4 font-medium" v-for="number in card_number">
                         <p>{{ number.number }}</p>
@@ -16,7 +16,7 @@
                     </div>
                 </main>
                 <main  @click="add_card = true"
-                    class="cursor-pointer shadow ml-4 shadow-gray-400 flex flex-col justify-between text-xl min-w-[360px] h-[240px] rounded-xl bg-gradient-to-tr  from-gray-500 to-gray-300 hover:bg-gradient-to-tr  hover:from-gray-600 hover:to-gray-400">
+                    class="cursor-pointer shadow shadow-gray-400 flex flex-col mt-2 justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr  from-gray-500 to-gray-300 hover:bg-gradient-to-tr  hover:from-gray-600 hover:to-gray-400">
                     <p></p>
                     <p class="flex  justify-center items-center">
                         <span>

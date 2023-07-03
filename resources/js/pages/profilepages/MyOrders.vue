@@ -20,72 +20,74 @@
                     @rowDoubleClicked="rowProtocolSelect">
             </ag-grid-vue>
         </div> -->
-     <table class="items-center bg-transparent w-full border-collapse ml-4">
-                    <thead>
-                        <tr class="text-center">
-                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                               Buyurtma raqami
-                            </th>
-                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                Buyurtma sanasi
-                            </th> 
-                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                Jami
-                            </th> 
-                            <th class="align-center px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                Holati
-                            </th>
-                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                               To'lov
-                            </th>
-                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                Funksiyalar
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="item in orders">
-                            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                             {{ item.id }}
-                             </th>
-                             <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                             {{ item.created_at }}
-                             </td>
-                             <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                {{ totalPrice(item.products) }} UZS
-                             </td>
-                             <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                 <span v-if="item.order_check==null" class="px-4 text-lg rounded-sm bg-orange-400 text-white">
-                                     Tekshirilmoqda                                  
-                                  </span>
-                                  <span v-if="item.order_check==1" class="px-4 text-lg rounded-sm bg-green-400 text-white">
-                                     <span >Tasdiqlandi</span>                                    
-                                  </span>
-                                  <span v-if="item.order_check==2" class="px-4 text-lg rounded-sm bg-orange-400 text-white">
-                                     <span>Bekor qilindi</span>                                    
-                                  </span>
-                             </td>
-                             <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                 <button class="bg-emerald-500 text-white"  @click="add_Check = true,$store.state.id_selected=item.id">
-                                    <span class="px-4 text-lg rounded-sm hover:bg-emerald-600">
-                                     <i class="fal fa-receipt mr-1"></i>
-                                     To'lov
-                                 </span>
-                                 </button>
-                             </td>
-                             <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                 <button class="bg-violet-500 text-white" @click="order_info=true,$store.state.id_selected=item.id">
-                                    <span class="px-4 text-lg rounded-sm hover:bg-violet-600">
-                                     <i class="fal fa-list-ul mr-1"></i>
-                                     Batafsil
-                                 </span>
-                                 </button>
-                             </td>
-                                           
-                            </tr>                                   
-                        </tbody>
-    
-     </table>
+        <div class="w-full overflow-scroll">
+            <table class="items-center bg-transparent w-full border-collapse ml-4">
+                           <thead>
+                               <tr class="text-center">
+                                   <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                      Buyurtma raqami
+                                   </th>
+                                   <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                       Buyurtma sanasi
+                                   </th> 
+                                   <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                       Jami
+                                   </th> 
+                                   <th class="align-center px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                       Holati
+                                   </th>
+                                   <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                      To'lov
+                                   </th>
+                                   <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                       Funksiyalar
+                                   </th>
+                               </tr>
+                               </thead>
+                               <tbody>
+                                   <tr v-for="item in orders">
+                                   <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                    {{ item.id }}
+                                    </th>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                    {{ item.created_at }}
+                                    </td>
+                                    <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                       {{ totalPrice(item.products) }} UZS
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <span v-if="item.order_check==null" class="px-4 text-lg rounded-sm bg-orange-400 text-white">
+                                            Tekshirilmoqda                                  
+                                         </span>
+                                         <span v-if="item.order_check==1" class="px-4 text-lg rounded-sm bg-green-400 text-white">
+                                            <span >Tasdiqlandi</span>                                    
+                                         </span>
+                                         <span v-if="item.order_check==2" class="px-4 text-lg rounded-sm bg-orange-400 text-white">
+                                            <span>Bekor qilindi</span>                                    
+                                         </span>
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <button class="bg-emerald-500 text-white"  @click="add_Check = true,$store.state.id_selected=item.id">
+                                           <span class="px-4 text-lg rounded-sm hover:bg-emerald-600">
+                                            <i class="fal fa-receipt mr-1"></i>
+                                            To'lov
+                                        </span>
+                                        </button>
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <button class="bg-violet-500 text-white" @click="order_info=true,$store.state.id_selected=item.id">
+                                           <span class="px-4 text-lg rounded-sm hover:bg-violet-600">
+                                            <i class="fal fa-list-ul mr-1"></i>
+                                            Batafsil
+                                        </span>
+                                        </button>
+                                    </td>
+                                                  
+                                   </tr>                                   
+                               </tbody>
+           
+            </table>
+        </div>
 </template>
 
 <script setup>

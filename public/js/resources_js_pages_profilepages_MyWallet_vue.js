@@ -194,7 +194,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "fixed top-0 left-0 z-40 w-full h-full bg-black bg-opacity-40 flex justify-center items-center p-20"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
     onClick: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["stop"])),
-    "class": "bg-white shadow h-3/5 w-[500px] rounded-sm"
+    "class": "bg-white shadow h-3/5 xl:w-[500px] rounded-sm md:w-[350px]"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return _ctx.$emit('close');
@@ -244,13 +244,13 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "text-3xl h-28"
 }, "Kartalar", -1 /* HOISTED */);
 var _hoisted_2 = {
-  "class": "flex justify-between"
+  "class": "flex justify-between md:w-full"
 };
 var _hoisted_3 = {
-  "class": "w-1/2 flex justify-start items-center text-white"
+  "class": "flex flex-col justify-start items-center text-white md:w-full"
 };
 var _hoisted_4 = {
-  "class": "shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[360px] h-[240px] rounded-xl bg-gradient-to-tr from-green-600 to-green-400"
+  "class": "shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr from-green-600 to-green-400 md:w-full"
 };
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex justify-start mx-8 my-4 font-thin"
@@ -284,7 +284,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.add_card = true;
     }),
-    "class": "cursor-pointer shadow ml-4 shadow-gray-400 flex flex-col justify-between text-xl min-w-[360px] h-[240px] rounded-xl bg-gradient-to-tr from-gray-500 to-gray-300 hover:bg-gradient-to-tr hover:from-gray-600 hover:to-gray-400"
+    "class": "cursor-pointer shadow shadow-gray-400 flex flex-col mt-2 justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr from-gray-500 to-gray-300 hover:bg-gradient-to-tr hover:from-gray-600 hover:to-gray-400"
   }, _hoisted_11)])])])], 64 /* STABLE_FRAGMENT */);
 }
 
@@ -302,13 +302,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AddCard_vue_vue_type_template_id_da808860__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddCard.vue?vue&type=template&id=da808860 */ "./resources/js/components/profile/AddCard.vue?vue&type=template&id=da808860");
 /* harmony import */ var _AddCard_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddCard.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/profile/AddCard.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddCard_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddCard_vue_vue_type_template_id_da808860__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/profile/AddCard.vue"]])
+const __exports__ = /*#__PURE__*/(0,E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddCard_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddCard_vue_vue_type_template_id_da808860__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/profile/AddCard.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -329,13 +329,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _MyWallet_vue_vue_type_template_id_29abc2a0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MyWallet.vue?vue&type=template&id=29abc2a0 */ "./resources/js/pages/profilepages/MyWallet.vue?vue&type=template&id=29abc2a0");
 /* harmony import */ var _MyWallet_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MyWallet.vue?vue&type=script&setup=true&lang=js */ "./resources/js/pages/profilepages/MyWallet.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_programms_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MyWallet_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MyWallet_vue_vue_type_template_id_29abc2a0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/profilepages/MyWallet.vue"]])
+const __exports__ = /*#__PURE__*/(0,E_xampp_htdocs_online_shop_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MyWallet_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MyWallet_vue_vue_type_template_id_29abc2a0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/profilepages/MyWallet.vue"]])
 /* hot reload */
 if (false) {}
 
