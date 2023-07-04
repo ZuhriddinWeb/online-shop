@@ -2,10 +2,12 @@
     <header>
         <Header />
     </header>
+    <Preloader @close="loader = true" v-if="!loader" />
+
     <main
-        class="xl:mx-auto md:mx-4 bg-white my-5 w-full flex flex-col justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+        class="xl:mx-auto md:mx-4 bg-white my-5 w-full flex flex-col text-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
         <article class="xl:w-3/5 md:w-full m-4">
-            <p class="flex text-center font-medium"><span>Зарегистрировать нового члена Клуба ForeverGab</span></p>
+            <p class="text-center font-medium">Личный кабинет</p>
             <form class="flex flex-col justify-center mt-4" autocomplete="off" @submit.prevent="onLogin">
                 <input v-model="result_login.phone" type="text"
                     class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none"
@@ -25,6 +27,7 @@
 // import VuePhoneNumberInput from 'vue-phone-number-input';948537875
 import { kMaxLength } from "buffer";
 import Header from "../components/Header.vue"
+import Preloader from '../components/Preloader.vue';
 
 import { reactive, onMounted, ref, computed } from "vue";
 const emit = defineEmits(['close'])
@@ -35,6 +38,7 @@ const showPassword = ref(false);
 const showPasswordTwo = ref(false);
 const password = ref(null);
 const passwordTwo = ref(null);
+const loader = ref(null);
 
 
 function toggleTabs(tabNumber) {
@@ -82,4 +86,9 @@ const onRegistration = async () => {
 const onLogin = async () => {
     await store.dispatch('login', result_login)
 };
+onMounted(async () => {   
+    setInterval(() => {
+		loader.value=true
+	}, 1500)
+});
 </script>

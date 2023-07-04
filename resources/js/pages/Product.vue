@@ -2,6 +2,8 @@
     <header>
         <Header />
     </header>
+    <Preloader @close="loader = true" v-if="!loader" />
+
     <section class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
         <article class="flex flex-col w-full ">
             <div class="w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
@@ -129,7 +131,8 @@
                             class="w-full p-4 flex flex-col bg-white mb-2 rounded-sm border border-gray-100 hover:shadow-lg">
                             <main class="-m-4 mb-3 relative overflow-hidden">
                                 <div class="absolute top-0 left-0 w-full h-full bg-black/20"></div>
-                                <img class="h-[180px] w-full object-contain" v-bind:src="'/images/' + similarProducts?.images_product" />
+                                <img class="h-[180px] w-full object-contain"
+                                    v-bind:src="'/images/' + similarProducts?.images_product" />
                             </main>
                             <main class="flex flex-col">
                                 <!-- <h3 class="font-semibold text-xl">{{ similarProducts.id }}</h3> -->
@@ -164,8 +167,10 @@
 import { reactive, onMounted, ref, watch } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import Preloader from '../components/Preloader.vue';
 import { useRoute } from "vue-router";
 const route = useRoute();
+const loader = ref(null);
 
 const openTab = ref(1);
 const product_with_cat = ref(null);
@@ -194,6 +199,9 @@ function getProducts() {
         axios.get(`products-with-cat/${data[0].category_id}`).then((res) => {
             product_with_cat.value = res.data;
         });
+        setInterval(() => {
+            loader.value = true
+        }, 1500)
     });
 }
 getProducts();

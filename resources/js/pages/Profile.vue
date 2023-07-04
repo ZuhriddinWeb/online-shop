@@ -2,6 +2,7 @@
     <header>
         <Header />
     </header>
+    <Preloader @close="loader = true" v-if="!loader" />
 
 
     <div class="container mx-auto bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
@@ -114,6 +115,7 @@
 <script setup>
 import Header from "../components/Header.vue"
 import { reactive, ref } from "vue";
+import Preloader from '../components/Preloader.vue';
 const add_Check = ref(null);
 const my_orders = ref(null);
 const my_peoples = ref(null);
@@ -121,6 +123,7 @@ const my_cashback = ref(null);
 const my_info = ref(true);
 const generator = ref(null)
 const page = ref(null)
+const loader = ref(null);
 
 // function scrollToElement(){
 //     page.value.scrollTop()
@@ -128,6 +131,9 @@ const page = ref(null)
 // scrollToElement()
 axios.get(`cashback`).then(({ data }) => {
     my_cashback.value = data;
+    setInterval(() => {
+		loader.value=true
+	}, 1500)
 })
 function copyToClipboard() {
     generator.value.focus()
