@@ -529,20 +529,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1 /* STABLE */
   })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_router_link, {
     key: 1,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-block no-underline hover:border-b-1 border-orange-500", {
-      'justify-end relative': _ctx.$store.state.opened
-    }]),
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $setup.emit('open');
-    }),
-    to: "/register"
+    "class": "inline-block no-underline hover:border-b-1 border-orange-500",
+    to: "/login"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <i class=\"fal fa-registered text-2xl\"></i>                     "), _hoisted_6];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["class"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button v-else @click=\"emit('open')\" class=\"inline-block no-underline hover:text-black\" href=\"#\" :class=\"{ 'justify-end relative': $store.state.opened }\">                   \r\n                        <i class=\"fal fa-user-circle text-2xl\"></i>\r\n                    </button>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    onClick: _cache[1] || (_cache[1] = function ($event) {
+  })), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link  class=\"inline-block no-underline hover:border-b-1 border-orange-500 \"   to=\"/register\">    \r\n                        <i class=\"fal fa-registered text-2xl\"></i>                    \r\n                    </router-link>   "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button v-else @click=\"emit('open')\" class=\"inline-block no-underline hover:text-black\" href=\"#\" :class=\"{ 'justify-end relative': $store.state.opened }\">                   \r\n                        <i class=\"fal fa-user-circle text-2xl\"></i>\r\n                    </button>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.emit('open');
     }),
     "class": "inline-block no-underline hover:border-b-1 border-orange-500",
@@ -740,7 +735,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "flex justify-end fixed top-0 left-0 w-full h-full bg-black bg-opacity-30 z-40"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", {
     onClick: _cache[14] || (_cache[14] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["stop"])),
-    "class": "md:w-full justify-between h-full overflow-hidden p-4 pr-0 bg-gray-50 shadow overflow-scroll"
+    "class": "md:w-full justify-between h-full overflow-hidden p-4 pr-0 bg-gray-50 shadow"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.emit('close');
@@ -784,7 +779,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "password",
     "class": "mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none",
     placeholder: "Парол"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.result_login.password]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input type=\"text\" class=\"mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none\" placeholder=\"ID Приглашатель\"> "), _hoisted_25], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_24), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <article class=\"flex justify-between py-4 text-orange-600\">\r\n                                    <p class=\"cursor-pointer\">Начать бизнес</p>\r\n                                    <p class=\"cursor-pointer\">Забыли пароль?</p>\r\n                                </article> ")], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.result_login.password]]), _hoisted_25], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_24)], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'hidden': $setup.openTab !== 1,
       'block': $setup.openTab === 1

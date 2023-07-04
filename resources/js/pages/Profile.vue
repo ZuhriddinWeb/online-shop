@@ -105,7 +105,7 @@
             <!-- <div class="flex justify-start h-24">
                     <span class="text-xl font-semibold ml-4">Ma'lumotlar</span>
                 </div> -->
-            <div>
+            <div ref="page">
                 <router-view></router-view>
             </div>
         </aside>
@@ -120,6 +120,12 @@ const my_peoples = ref(null);
 const my_cashback = ref(null);
 const my_info = ref(true);
 const generator = ref(null)
+const page = ref(null)
+
+// function scrollToElement(){
+//     page.value.scrollTop()
+// }
+// scrollToElement()
 axios.get(`cashback`).then(({ data }) => {
     my_cashback.value = data;
 })

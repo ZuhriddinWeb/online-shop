@@ -1,6 +1,6 @@
 <template>
     <section @click="emit('close')" class="flex justify-end fixed top-0 left-0 w-full h-full  bg-black bg-opacity-30 z-40">
-        <aside @click.stop class="md:w-full justify-between h-full overflow-hidden p-4 pr-0 bg-gray-50 shadow overflow-scroll">
+        <aside @click.stop class="md:w-full justify-between h-full overflow-hidden p-4 pr-0 bg-gray-50 shadow ">
             <div class="menu flex flex-col justify-between">
                 <div class="text-black flex justify-between pb-4 pr-4">
                     <span></span>
@@ -48,15 +48,11 @@
                                                     <input v-model="result_login.password" type="password"
                                                         class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none"
                                                         placeholder="Парол">
-                                                    <!-- <input type="text" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-200 py-2 focus:outline-none" placeholder="ID Приглашатель"> -->
                                                     <button
                                                         class="flex justify-center items-center w-full py-3 bg-orange-500 text-white text-xs font-bold uppercase px-5  shadow  leading-normal cursor-pointer rounded-sm"><i
                                                             class="fal fa-door-open mr-2 text-base"></i>Kirish</button>
                                                 </form>
-                                                <!-- <article class="flex justify-between py-4 text-orange-600">
-                                    <p class="cursor-pointer">Начать бизнес</p>
-                                    <p class="cursor-pointer">Забыли пароль?</p>
-                                </article> -->
+                                               
                                             </div>
                                             <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
                                                 <form class="flex flex-col justify-center mt-4"

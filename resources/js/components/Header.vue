@@ -40,9 +40,13 @@
                     <router-link v-if="$store.state.user" class="inline-block no-underline hover:border-b-1 border-orange-500 " to="/profile">                        
                         <i class="fal fa-user-circle text-2xl"></i>                           
                     </router-link>  
-                    <router-link v-else class="inline-block no-underline hover:border-b-1 border-orange-500 "  @click="emit('open')" :class="{ 'justify-end relative': $store.state.opened }" to="/register">                        
+                    <router-link v-else class="inline-block no-underline hover:border-b-1 border-orange-500"   to="/login">    
+                        <!-- <i class="fal fa-registered text-2xl"></i>                     -->
                         <i class="fal fa-user-circle text-2xl"></i>                           
                     </router-link>  
+                    <!-- <router-link  class="inline-block no-underline hover:border-b-1 border-orange-500 "   to="/register">    
+                        <i class="fal fa-registered text-2xl"></i>                    
+                    </router-link>   -->
                     <!-- <button v-else @click="emit('open')" class="inline-block no-underline hover:text-black" href="#" :class="{ 'justify-end relative': $store.state.opened }">                   
                         <i class="fal fa-user-circle text-2xl"></i>
                     </button>  -->

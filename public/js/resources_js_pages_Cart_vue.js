@@ -283,20 +283,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1 /* STABLE */
   })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_router_link, {
     key: 1,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-block no-underline hover:border-b-1 border-orange-500", {
-      'justify-end relative': _ctx.$store.state.opened
-    }]),
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $setup.emit('open');
-    }),
-    to: "/register"
+    "class": "inline-block no-underline hover:border-b-1 border-orange-500",
+    to: "/login"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <i class=\"fal fa-registered text-2xl\"></i>                     "), _hoisted_6];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["class"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button v-else @click=\"emit('open')\" class=\"inline-block no-underline hover:text-black\" href=\"#\" :class=\"{ 'justify-end relative': $store.state.opened }\">                   \r\n                        <i class=\"fal fa-user-circle text-2xl\"></i>\r\n                    </button>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    onClick: _cache[1] || (_cache[1] = function ($event) {
+  })), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link  class=\"inline-block no-underline hover:border-b-1 border-orange-500 \"   to=\"/register\">    \r\n                        <i class=\"fal fa-registered text-2xl\"></i>                    \r\n                    </router-link>   "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button v-else @click=\"emit('open')\" class=\"inline-block no-underline hover:text-black\" href=\"#\" :class=\"{ 'justify-end relative': $store.state.opened }\">                   \r\n                        <i class=\"fal fa-user-circle text-2xl\"></i>\r\n                    </button>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.emit('open');
     }),
     "class": "inline-block no-underline hover:border-b-1 border-orange-500",

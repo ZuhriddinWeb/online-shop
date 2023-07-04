@@ -86,6 +86,12 @@ __webpack_require__.r(__webpack_exports__);
     var my_cashback = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
     var my_info = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(true);
     var generator = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
+    var page = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
+
+    // function scrollToElement(){
+    //     page.value.scrollTop()
+    // }
+    // scrollToElement()
     axios.get("cashback").then(function (_ref2) {
       var data = _ref2.data;
       my_cashback.value = data;
@@ -108,6 +114,7 @@ __webpack_require__.r(__webpack_exports__);
       my_cashback: my_cashback,
       my_info: my_info,
       generator: generator,
+      page: page,
       copyToClipboard: copyToClipboard,
       Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
@@ -196,20 +203,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1 /* STABLE */
   })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_router_link, {
     key: 1,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-block no-underline hover:border-b-1 border-orange-500", {
-      'justify-end relative': _ctx.$store.state.opened
-    }]),
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $setup.emit('open');
-    }),
-    to: "/register"
+    "class": "inline-block no-underline hover:border-b-1 border-orange-500",
+    to: "/login"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <i class=\"fal fa-registered text-2xl\"></i>                     "), _hoisted_6];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["class"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button v-else @click=\"emit('open')\" class=\"inline-block no-underline hover:text-black\" href=\"#\" :class=\"{ 'justify-end relative': $store.state.opened }\">                   \r\n                        <i class=\"fal fa-user-circle text-2xl\"></i>\r\n                    </button>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    onClick: _cache[1] || (_cache[1] = function ($event) {
+  })), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link  class=\"inline-block no-underline hover:border-b-1 border-orange-500 \"   to=\"/register\">    \r\n                        <i class=\"fal fa-registered text-2xl\"></i>                    \r\n                    </router-link>   "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button v-else @click=\"emit('open')\" class=\"inline-block no-underline hover:text-black\" href=\"#\" :class=\"{ 'justify-end relative': $store.state.opened }\">                   \r\n                        <i class=\"fal fa-user-circle text-2xl\"></i>\r\n                    </button>  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.emit('open');
     }),
     "class": "inline-block no-underline hover:border-b-1 border-orange-500",
@@ -373,6 +375,9 @@ var _hoisted_39 = [_hoisted_38];
 var _hoisted_40 = {
   "class": "sm:w-3/3 md:w-1/3 lg:w-3/4 px-5 py-4"
 };
+var _hoisted_41 = {
+  ref: "page"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _$setup$my_cashback;
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -456,7 +461,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return _ctx.$store.dispatch('logout');
     })
-  }, _hoisted_39)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex justify-start h-24\">\r\n                    <span class=\"text-xl font-semibold ml-4\">Ma'lumotlar</span>\r\n                </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)])])])], 64 /* STABLE_FRAGMENT */);
+  }, _hoisted_39)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex justify-start h-24\">\r\n                    <span class=\"text-xl font-semibold ml-4\">Ma'lumotlar</span>\r\n                </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)], 512 /* NEED_PATCH */)])])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
