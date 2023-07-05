@@ -917,6 +917,9 @@ video {
 .w-\[50px\] {
   width: 50px;
 }
+.w-4\/6 {
+  width: 66.666667%;
+}
 .min-w-0 {
   min-width: 0px;
 }

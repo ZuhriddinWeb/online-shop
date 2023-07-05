@@ -12,7 +12,7 @@
             <main class="flex flex-col justify-between  mr-3 md:w-2/3 lg:w-w-4/5">
                 <div class="flex justify-between font-medium uppercase border-t-2 border-b-2 py-4 bg-gray-50">
                     <p class="w-2/6">Mahsulot</p>
-                    <p class="w-1/6 text-center">soni</p>
+                    <p class="w-1/6 text-center"></p>
                     <p class="w-1/6 text-center">dona narxi</p>
                     <p class="w-1/6 text-center">Umumiy narx</p>
                     <div></div>
@@ -45,28 +45,33 @@
                             </p>
                         </main>
                     </div>
-                    <div class="w-1/6 text-center">
-                        <button class="mr-2 bg-gray-200" @click="decrement(item)">
-                            <i class="fal fa-chevron-left p-2"></i>
-                        </button>
-                        <span class="px-3">{{ item.count }}</span>
-                        <button class="ml-2 bg-gray-200" @click="increment(item)">
-                            <i class="fal fa-chevron-right p-2"></i>
-                        </button>
-                    </div>
-                    <div class="w-1/6 text-center">
-                        {{ item.products?.price }}
-                        <span class="font-medium text-green-500">UZS</span>
-                    </div>
-                    <div class="w-1/6 text-center">
-                        {{ item.products?.price * item.count }}
-                        <span class="font-medium text-green-500">UZS</span>
-                    </div>
-                    <div class="mr-4">
-                        <button @click="delete_is_cart(item)">
-                            <i class="fal fa-times text-2xl text-rose-500 cursor-pointer hover:text-rose-600"></i>
-                        </button>
-                    </div>
+
+                    <main class="w-2/6 flex flex-col justify-between">
+                        <article class="w-full flex justify-between">
+                            <div class="w-1/6 text-center">
+                                {{ item.products?.price }}
+                                <span class="font-medium text-green-500">UZS</span>
+                            </div>
+                            <div class="w-1/6 text-center">
+                                {{ item.products?.price * item.count }}
+                                <span class="font-medium text-green-500">UZS</span>
+                            </div>
+                            <div class="mr-4">
+                                <button @click="delete_is_cart(item)">
+                                    <i class="fal fa-times text-2xl text-rose-500 cursor-pointer hover:text-rose-600"></i>
+                                </button>
+                            </div>
+                        </article>
+                        <div class="text-center flex justify-start w-full mt-8">
+                            <button class="mr-2 bg-gray-200" @click="decrement(item)">
+                                <i class="fal fa-chevron-left p-2"></i>
+                            </button>
+                            <span class="px-3">{{ item.count }}</span>
+                            <button class="ml-2 bg-gray-200" @click="increment(item)">
+                                <i class="fal fa-chevron-right p-2"></i>
+                            </button>
+                        </div>
+                    </main>
                 </div>
             </main>
             <article class="flex flex-col bg-gray-50  mx-4 h-48 uppercase md:w-1/3 lg:w-1/5">
