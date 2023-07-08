@@ -1,0 +1,48 @@
+<template>
+    <main        
+       class="fixed top-0 left-0 z-40 w-full h-full bg-black bg-opacity-40 flex justify-center items-center p-20"
+   >
+       <section @click.stop class="bg-white shadow h-[30%] w-3/6">
+           <div class="flex flex-col h-full  relative">
+               <main class="flex flex-col h-full justify-between w-full items-center ">
+                   <div class="flex justify-between w-full bg-gray-100 px-4 py-2">
+                       <button @click="$emit('close')" class="px-3 py-1 text-red-500 hover:text-red-600 absolute right-0 top-0">
+                           <i class="fal fa-times"></i>
+                       </button>
+                       <header class="flex justify-center text-gray-400 items-center text-xl">                       
+                           Kategoriya ma'lumotlarini tahrirlash:
+                       </header>
+                   </div>
+                   <form class="w-full  mb-8 mt-8 p-4" @submit.prevent="onSubmit">                   
+                   <p>Kategoriya nomi:</p>
+                   <input v-model="result.category_name" class="mb-2 appearance-none bg-transparent w-full text-gray-700 mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none" type="text" />
+                       <main class="flex justify-end my-6 ">
+                           <button class="flex w-[100px] items-center justify-center mt-2 mr-2 bg-gray-100 border-b border-blue-500 hover:bg-blue-200   py-1 px-2" type="submit">                              
+                               Saqlash
+                           </button>
+                           <button  @click="$emit('close')" class="flex w-[100px]  items-center mt-2 bg-gray-100 border-b-2  hover:bg-rose-200 border-rose-500  py-1 px-2" type="submit">                   
+                               Bekor qilish
+                           </button>
+                       </main>                        
+                   </form>
+               </main>
+           </div>
+       </section>
+   </main>
+</template>
+
+<script setup>
+import { reactive, onMounted, ref } from "vue";
+const emit = defineEmits("added");
+
+const result = reactive({
+    category_name:"",
+});
+const onSubmit = async () => {    
+    const { data } = await axios.post(`category-update/${store.state.id_selected}`, result);
+    if (data.status == 200) {
+        emit("added");
+        emit("close");
+    }
+};
+</script>
