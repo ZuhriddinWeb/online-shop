@@ -155,7 +155,7 @@ async function delete_is_cart(cart) {
         showCancelButton: true,
         confirmButtonColor: "rgb(249 115 22)",
         confirmButtonText: "Да!",
-        cancelButtonText: "Нет!",
+        cancelButtonText: "Нет",
         reverseButtons: true,
     }).then((result) => {
         if (result.isConfirmed) {
