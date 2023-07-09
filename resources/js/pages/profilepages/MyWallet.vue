@@ -1,17 +1,17 @@
 <template>
     <AddCard @close="add_card = null" :selectedDataEdit="add_card" v-if="add_card" />
     <div>
-        <h3 class="text-3xl h-28 ">Kartalar</h3>
+        <h3 class="text-3xl h-28 ">Мои карты</h3>
         <main class="flex justify-between md:w-full">
             <div class="flex flex-col justify-start items-center text-white md:w-full md:flex-row md:space-x-4 md:space-y-0">
-                <main
-                    class="shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr  from-green-600 to-green-400 ">
+                <main  v-for="item in card"
+                    class="mb-2 shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr  from-green-600 to-green-400 ">
                     <div class="flex justify-start mx-8 my-4 font-thin">4Ever.uz</div>
-                    <div class="flex mx-8 my-4 font-medium" v-for="number in card_number">
-                        <p>{{ number.number }}</p>
+                    <div class="flex mx-8 my-4 font-medium">
+                        <p>{{ item.number }}</p>
                     </div>
                     <div class="flex justify-between mx-8 my-4">
-                        <p>************************</p>
+                        <!-- <p>{{ item.number }}</p> -->
                         <!-- <p>Humo</p> -->
                     </div>
                 </main>
@@ -22,7 +22,7 @@
                         <span>
                             <i class="fal fa-plus"></i>
                         </span>
-                        <span class="ml-2">Karta qo'shish</span>
+                        <span class="ml-2">Добавить карту</span>
                     </p>
                     <p></p>
                 </main>
@@ -36,4 +36,11 @@ import AddCard from '../../components/profile/AddCard.vue';
 import { reactive, ref } from "vue";
 
 const add_card = ref(null);
+const card = ref(null);
+
+
+axios.get(`user-cards/${store.state.user.id}`).then(({ data }) => {
+    card.value = data;
+    
+})
 </script>

@@ -9,7 +9,7 @@
                     <span>Forever</span>
                     <span class="text-orange-500">Gab</span>
                 </h3>
-                <h3 class="text-3xl font-medium">parfume</h3>
+                <h3 class="text-3xl font-medium">perfume</h3>
             </div>
         </div>
     </div>

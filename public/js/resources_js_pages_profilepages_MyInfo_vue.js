@@ -20,13 +20,13 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var orders = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
-    axios.get("user-order/".concat(_store__WEBPACK_IMPORTED_MODULE_1__["default"].state.user.id)).then(function (_ref2) {
+    var user_info = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
+    axios.get("user-info/".concat(_store__WEBPACK_IMPORTED_MODULE_1__["default"].state.user.id)).then(function (_ref2) {
       var data = _ref2.data;
-      orders.value = data;
+      user_info.value = data[0];
     });
     var __returned__ = {
-      orders: orders,
+      user_info: user_info,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       get store() {
@@ -56,14 +56,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "flex justify-between bg-pink-300 mx-2"
+  "class": "flex justify-between mx-4"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "flex flex-col justify-between"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Test"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n        </div>\n        <div class=\"flex flex-col justify-between\">\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p> ")], -1 /* HOISTED */);
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_2 = {
+  "class": "flex flex-col justify-between py-6 text-xl"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "font-bold text-gray-400"
+}, "Имя:", -1 /* HOISTED */);
+var _hoisted_4 = {
+  "class": "ml-1 font-semibold"
+};
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "font-bold text-gray-400"
+}, "Фамилия:", -1 /* HOISTED */);
+var _hoisted_6 = {
+  "class": "ml-1 font-semibold"
+};
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "font-bold text-gray-400"
+}, "Паспортные данные:", -1 /* HOISTED */);
+var _hoisted_8 = {
+  "class": "ml-1 font-semibold"
+};
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "font-bold text-gray-400"
+}, "Мобильный телефон:", -1 /* HOISTED */);
+var _hoisted_10 = {
+  "class": "ml-1 font-semibold"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "font-bold text-gray-400"
+}, "Адрес:", -1 /* HOISTED */);
+var _hoisted_12 = {
+  "class": "ml-1 font-semibold"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$store.state.user.fname), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$store.state.user.lname), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$store.state.user.passport), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$store.state.user.phone), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$store.state.user.phone), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>{{ user_info[0].lname }}</p>\n            <p>{{ user_info[0].lname }}</p>\n            <p>{{ user_info[0].lname }}</p>\n            <p>{{ user_info[0].lname }}</p> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex flex-col justify-between\">\n            <p>Mustafoyev Zuhriddin</p>Мобильный телефон\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n            <p>Mustafoyev Zuhriddin</p>\n        </div> ")]);
 }
 
 /***/ }),

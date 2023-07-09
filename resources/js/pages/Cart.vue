@@ -5,16 +5,16 @@
     <Preloader @close="loader = true" v-if="!loader" />
 
     <section class="w-full container mx-auto flex flex-col mt-0 py-3">
-        <p class="text-2xl font-semibold mx-2">Savat</p>
+        <p class="text-2xl font-semibold mx-2">Корзина</p>
         <!-- {{ $store.state.user.id }} -->
         <div class=" justify-between w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 mx-2"
             v-if="cart_user.length">
             <main class="flex flex-col justify-between  mr-3 md:w-2/3 lg:w-w-4/5">
                 <div class="flex justify-between font-medium uppercase border-t-2 border-b-2 py-4 bg-gray-50">
-                    <p class="w-2/6">Mahsulot</p>
+                    <p class="w-2/6">Товар</p>
                     <p class="w-1/6 text-center"></p>
-                    <p class="w-1/6 text-center">dona narxi</p>
-                    <p class="w-1/6 text-center">Umumiy narx</p>
+                    <p class="w-1/6 text-center"></p>
+                    <p class="w-1/6 text-center"></p>
                     <div></div>
                 </div>
                 <div v-for="item in cart_user" class="flex justify-between items-start uppercase pt-4 border-b-2 pb-4">
@@ -31,17 +31,17 @@
                         <main class="uppercase py-4">
                             <p class="font-medium">#{{ item.products.id }}</p>
                             <p>
-                                <span class="mr-4 text-gray-400">aromat</span>{{ item.products?.flavor }}
+                                <span class="mr-4 text-gray-400">Аромат</span>{{ item.products?.flavor }}
                             </p>
                             <p>
-                                <span class="mr-4 text-gray-400">hajmi</span>{{ item.products?.volume }}
+                                <span class="mr-4 text-gray-400">Объем</span>{{ item.products?.volume }}
                             </p>
                             <p>
-                                <span class="mr-4 text-gray-400">mahsulot kategoriyasi</span>{{
+                                <span class="mr-4 text-gray-400">Категория</span>{{
                                     item.products?.category.category_name }}
                             </p>
                             <p>
-                                <span class="mr-4 text-gray-400">Qoldiq:</span>{{ item.products?.count_products }} ta
+                                <span class="mr-4 text-gray-400">остаток:</span>{{ item.products?.count_products }} ta
                             </p>
                         </main>
                     </div>
@@ -76,15 +76,15 @@
             </main>
             <article class="flex flex-col bg-gray-50  mx-4 h-48 uppercase md:w-1/3 lg:w-1/5">
                 <p class="border-b-2 mx-4 font-medium py-4">
-                    Xarid ma'lumotnomasi
+                    Информация
                 </p>
                 <div class="flex justify-between mx-4 py-4 text-sm">
-                    <p>Mahsulotlar soni: <span class="font-medium">{{ $store.state.cart.length }}</span></p>
+                    <p>В корзине: <span class="font-medium">{{ $store.state.cart.length }}</span> товара</p>
                     <p><span class="text-green-500 font-medium">{{ summa }}</span> <span class="font-medium">UZS</span></p>
                 </div>
                 <button @click="agreement(cart_user)"
                     class="border-b-2 border-orange-500 mx-4 text-xl hover:text-orange-500">
-                    <i class="fal fa-handshake mx-2"></i>Rasmiylashtirish
+                    <i class="fal fa-handshake mx-2"></i>ОФОРМИТЬ
                 </button>
             </article>
         </div>
@@ -138,7 +138,7 @@ async function agreement(cart) {
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Buyurtmangiz qabul qilindi',
+            title: 'Спасибо, ваша заявка принята',
             showConfirmButton: false,
             timer: 2000
         })

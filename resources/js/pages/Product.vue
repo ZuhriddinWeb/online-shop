@@ -12,35 +12,35 @@
                         <img class="h-full w-full" v-bind:src="'/images/' + currentProduct?.images_product" />
                     </div>
                 </div>
-                <div class="flex flex-col w-3/5 justify-between my-2 px-4 py-5 md:w-1/3 lg:w-1/4">
-                    <article class="flex flex-col h-2/3">
+                <div class="flex flex-col justify-between my-2 px-4 py-5 md:w-3/3 lg:w-1/4">
+                    <article class="flex flex-col h-2/3 ">
                         <p class="text-gray-300">#{{ currentProduct.id }}</p>
                         <h3 class="text-2xl my-3">
                             {{ currentProduct.product_name }}
                         </h3>
                         <p class="font-medium text-xl">
-                            <span class="mr-1">Kategoriya:</span><span class="text-orange-500">{{
+                            <span class="mr-1">Категория:</span><span class="text-orange-500">{{
                                 currentProduct.category?.category_name
                             }}</span>
                         </p>
                         <p class="font-medium text-xl">
-                            <span class="mr-1">Aromat:</span><span class="text-orange-500">{{
+                            <span class="mr-1">Аромат:</span><span class="text-orange-500">{{
                                 currentProduct.flavor
                             }}</span>
                         </p>
                         <p class="font-medium text-xl">
-                            <span class="mr-1">Holati:</span>
-                            <span v-if="currentProduct.count_products > 0" class="text-green-500">Sotuvda bor</span>
-                            <span v-else class="text-rose-500">Sotuvda yo'q</span>
+                            <span class="mr-1">Доступность:</span>
+                            <span v-if="currentProduct.count_products > 0" class="text-green-500">на складе</span>
+                            <span v-else class="text-rose-500">нет складе</span>
                         </p>
                     </article>
                     <main class="flex flex-col">
                         <div></div>
                         <div>
                             <p class="my-2">
-                                <span class="mr-1">Mahsulot hajmi:</span>{{ currentProduct.volume }}ml
+                                <span class="mr-1 text-xl">Объем :</span>{{ currentProduct.volume }}ml
                             </p>
-                            <p class="text-md font-bold uppercase my-1">
+                            <p class="text-md font-bold uppercase my-1 text-xl">
                                 {{ currentProduct.price }}$
                             </p>
                             <div class="flex justify-start items-center">
@@ -48,9 +48,9 @@
                                     :class="{ 'bg-orange-600 text-white': $store.state.cart.includes(currentProduct.id) }"
                                     class="border border-orange-600 text-orange-600 px-4 py-2 rounded-sm hover:opacity-70 text-xs font-bold uppercase">
                                     <span v-if="$store.state.cart.includes(currentProduct.id) == false"><i
-                                            class="fal fa-shopping-bag pr-3"></i> Savatga qo'shish </span>
+                                            class="fal fa-shopping-bag pr-3"></i>В корзину</span>
 
-                                    <span v-else><i class="fal fa-check pr-3"></i>Savatdan o'chirish</span>
+                                    <span v-else><i class="fal fa-check pr-3"></i>Удалить из корзины </span>
 
                                 </button>
                             </div>
@@ -69,7 +69,7 @@
                                         'border-b-2 border-orange-500':
                                             openTab === 1,
                                     }">
-                                    Ma'lumot
+                                    Описание продукта
                                 </a>
                             </li>
                             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -79,7 +79,7 @@
                                         'border-b-2 border-orange-500':
                                             openTab === 2,
                                     }">
-                                    Tarkibi
+                                    Ингредиенты
                                 </a>
                             </li>
                         </ul>
@@ -119,8 +119,7 @@
             <div class="flex flex-col">
                 <h3 v-if="product_with_cat"
                     class="flex h-10 text-xl px-2 mx-2 mb-2 items-center border-b-2 border-orange-500 justify-center rounded-sm">
-                    <i class="fal fa-leaf-maple mr-2"></i>Tavsiya etilgan
-                    mahsulotlar
+                    <i class="fal fa-leaf-maple mr-2"></i>МЫ РЕКОМЕНДУЕМ
                 </h3>
                 <div class="flex flex-wrap w-full">
                     <router-link v-if="product_with_cat" v-for="(similarProducts, index) in product_with_cat" :to="{

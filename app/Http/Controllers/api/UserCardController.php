@@ -9,6 +9,7 @@ use App\Models\UserCard;
 use App\Models\UniversalBonus;
 use Auth;
 use Carbon\Carbon;
+use DB;
 class UserCardController extends Controller
 {
     /**
@@ -16,9 +17,9 @@ class UserCardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        return UserCard::where('user_id',$id)->get();
     }
 
     /**

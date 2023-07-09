@@ -109,6 +109,10 @@ Route::middleware(['auth:sanctum', 'ability:user,admin'])->group(function () {
     Route::get('/cashback', [CashbackController::class, 'index']);
 
     Route::post('/user-card-save', [UserCardController::class, 'create']);
+    Route::get('/user-cards/{id}', [UserCardController::class, 'index']);
+    Route::get('/user-info/{id}', [UserController::class, 'info']);
+
+
     
 });
 

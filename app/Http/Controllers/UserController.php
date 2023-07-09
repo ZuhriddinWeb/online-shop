@@ -12,6 +12,10 @@ use Illuminate\Support\Str;
 use DB;
 class UserController extends Controller
 {
+    public function info($id){
+        return User::where('id',$id)->get();
+    }
+
     public function index()
     {
         $users = DB::table('users')->get();

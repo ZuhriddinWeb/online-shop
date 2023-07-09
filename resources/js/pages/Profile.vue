@@ -56,7 +56,7 @@
                     <i class="fal fa-user p-4  text-center text-xl"></i>
                 </div>
                 <div class="flex justify-center mt-2">
-                    <router-link class="font-normal" :to="{ name: 'myinfo' }">Mening malumotlarim</router-link>
+                    <router-link class="font-normal" :to="{ name: 'myinfo' }">Личные данные</router-link>
                 </div>
             </article>
             <article class="flex justify-start  py-6 px-4 hover:shadow cursor-pointer">
@@ -64,7 +64,7 @@
                     <i class="fal fa-wallet p-4 text-center text-xl"></i>
                 </div>
                 <div class="flex justify-center mt-2">
-                    <router-link class="font-normal" :to="{ name: 'mywallet' }">Mening hamyonim</router-link>
+                    <router-link class="font-normal" :to="{ name: 'mywallet' }">Карты</router-link>
                 </div>
             </article>
             <article class="flex justify-start  py-6 px-4 hover:shadow cursor-pointer"
@@ -73,7 +73,7 @@
                     <i class="fal fa-box p-4 text-center text-xl"></i>
                 </div>
                 <div class="flex justify-center mt-2">
-                    <router-link class="font-normal" :to="{ name: 'myorders' }">Mening buyurtmalarim</router-link>
+                    <router-link class="font-normal" :to="{ name: 'myorders' }">Заказы</router-link>
                 </div>
             </article>
             <article class="flex justify-start  py-6 px-4 hover:shadow cursor-pointer"
@@ -82,7 +82,7 @@
                     <i class="fal fa-users p-4 text-center text-xl"></i>
                 </div>
                 <div class="flex justify-center mt-2">
-                    <router-link class="font-normal" :to="{ name: 'mypeoples' }">Mening izdoshlarim</router-link>
+                    <router-link class="font-normal" :to="{ name: 'mypeoples' }">Дерево</router-link>
                 </div>
             </article>
             <article class="flex justify-start  py-6 px-4 hover:shadow cursor-pointer">
@@ -90,7 +90,7 @@
                     <i class="fal fa-receipt p-4 text-center text-xl"></i>
                 </div>
                 <div class="flex justify-center mt-2">
-                    <router-link class="font-normal" :to="{ name: 'myhistory' }">To'lovlar tarixi</router-link>
+                    <router-link class="font-normal" :to="{ name: 'myhistory' }">Транзакции</router-link>
                 </div>
             </article>
             <article class="flex justify-start  py-6 px-4 hover:shadow cursor-pointer">
@@ -98,7 +98,7 @@
                     <i class="fal fa-sign-out p-4 text-center text-xl"></i>
                 </div>
                 <div class="flex justify-center mt-2" @click="$store.dispatch('logout')">
-                    <span class="font-normal">Chiqish</span>
+                    <span class="font-normal">Выход</span>
                 </div>
             </article>
         </main>

@@ -107,8 +107,14 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var add_card = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
+    var card = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
+    axios.get("user-cards/".concat(store.state.user.id)).then(function (_ref2) {
+      var data = _ref2.data;
+      card.value = data;
+    });
     var __returned__ = {
       add_card: add_card,
+      card: card,
       AddCard: _components_profile_AddCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
@@ -146,7 +152,9 @@ var _hoisted_3 = {
 };
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
   "class": "flex justify-center items-center text-xl text-gray-500"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Karta ma'lumotlarini kiritish")], -1 /* HOISTED */);
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "inline-block text-center"
+}, "Введите номер и срок действия карты")], -1 /* HOISTED */);
 var _hoisted_5 = {
   "class": "text-xl"
 };
@@ -172,16 +180,16 @@ var _hoisted_13 = {
 };
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm"
-}, "Kartaning amal qilish muddati", -1 /* HOISTED */);
+}, "Срок действия карты", -1 /* HOISTED */);
 var _hoisted_15 = {
   "class": "flex justify-between mt-12"
 };
 var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
-  "class": "bg-gray-100 w-1/2 py-1 px-4 mr-2 border-b-2 border-blue-500 hover:bg-blue-200"
+  "class": "w-1/2 py-1 px-4 mr-2 bg-green-500 text-white hover:bg-green-600"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "far fa-layer-plus mx-2"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Saqlash ")], -1 /* HOISTED */);
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Добавить ")], -1 /* HOISTED */);
 var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "far fa-times mx-2"
 }, null, -1 /* HOISTED */);
@@ -208,7 +216,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.result.number = $event;
     }),
-    placeholder: "Karta raqami",
+    placeholder: "Номер карты",
     "class": "text-sm mb-2 appearance-none bg-transparent w-full text-white mr-3 px-2 leading-tight border-b border-gray-300 py-2 focus:outline-none",
     type: "text"
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.result.number]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -222,8 +230,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return $setup.emit('close');
     }),
-    "class": "bg-gray-100 w-1/2 py-1 px-4 ml-2 border-b-2 border-rose-500 hover:bg-rose-200"
-  }, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Bekor qilish ")])])], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_9)])])])]);
+    "class": "w-1/2 py-1 px-4 ml-2 bg-rose-500 text-white hover:bg-rose-600"
+  }, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Назад ")])])], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_9)])])])]);
 }
 
 /***/ }),
@@ -242,7 +250,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "text-3xl h-28"
-}, "Kartalar", -1 /* HOISTED */);
+}, "Мои карты", -1 /* HOISTED */);
 var _hoisted_2 = {
   "class": "flex justify-between md:w-full"
 };
@@ -250,7 +258,7 @@ var _hoisted_3 = {
   "class": "flex flex-col justify-start items-center text-white md:w-full md:flex-row md:space-x-4 md:space-y-0"
 };
 var _hoisted_4 = {
-  "class": "shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr from-green-600 to-green-400"
+  "class": "mb-2 shadow shadow-gray-400 flex flex-col justify-between text-xl min-w-[315px] h-[225px] rounded-xl bg-gradient-to-tr from-green-600 to-green-400"
 };
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex justify-start mx-8 my-4 font-thin"
@@ -260,7 +268,7 @@ var _hoisted_6 = {
 };
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex justify-between mx-8 my-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "************************"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Humo</p> ")], -1 /* HOISTED */);
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>{{ item.number }}</p> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>Humo</p> ")], -1 /* HOISTED */);
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, null, -1 /* HOISTED */);
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "flex justify-center items-center"
@@ -268,7 +276,7 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "fal fa-plus"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "ml-2"
-}, "Karta qo'shish")], -1 /* HOISTED */);
+}, "Добавить карту")], -1 /* HOISTED */);
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, null, -1 /* HOISTED */);
 var _hoisted_11 = [_hoisted_8, _hoisted_9, _hoisted_10];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -278,9 +286,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.add_card = null;
     }),
     selectedDataEdit: $setup.add_card
-  }, null, 8 /* PROPS */, ["selectedDataEdit"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_4, [_hoisted_5, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.card_number, function (number) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(number.number), 1 /* TEXT */)]);
-  }), 256 /* UNKEYED_FRAGMENT */)), _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
+  }, null, 8 /* PROPS */, ["selectedDataEdit"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.card, function (item) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.number), 1 /* TEXT */)]), _hoisted_7]);
+  }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.add_card = true;
     }),

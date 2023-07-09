@@ -136,7 +136,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 Swal.fire({
                   position: 'top-end',
                   icon: 'success',
-                  title: 'Buyurtmangiz qabul qilindi',
+                  title: 'Спасибо, ваша заявка принята',
                   showConfirmButton: false,
                   timer: 2000
                 });
@@ -355,7 +355,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, "Gab")], -1 /* HOISTED */);
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "text-3xl font-medium"
-}, "parfume", -1 /* HOISTED */);
+}, "perfume", -1 /* HOISTED */);
 
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
@@ -383,7 +383,7 @@ var _hoisted_1 = {
 };
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-2xl font-semibold mx-2"
-}, "Savat", -1 /* HOISTED */);
+}, "Корзина", -1 /* HOISTED */);
 var _hoisted_3 = {
   key: 0,
   "class": "justify-between w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 mx-2"
@@ -391,7 +391,7 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "flex flex-col justify-between mr-3 md:w-2/3 lg:w-w-4/5"
 };
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex justify-between font-medium uppercase border-t-2 border-b-2 py-4 bg-gray-50\"><p class=\"w-2/6\">Mahsulot</p><p class=\"w-1/6 text-center\"></p><p class=\"w-1/6 text-center\">dona narxi</p><p class=\"w-1/6 text-center\">Umumiy narx</p><div></div></div>", 1);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex justify-between font-medium uppercase border-t-2 border-b-2 py-4 bg-gray-50\"><p class=\"w-2/6\">Товар</p><p class=\"w-1/6 text-center\"></p><p class=\"w-1/6 text-center\"></p><p class=\"w-1/6 text-center\"></p><div></div></div>", 1);
 var _hoisted_6 = {
   "class": "flex justify-between items-start uppercase pt-4 border-b-2 pb-4"
 };
@@ -409,16 +409,16 @@ var _hoisted_10 = {
 };
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "mr-4 text-gray-400"
-}, "aromat", -1 /* HOISTED */);
+}, "Аромат", -1 /* HOISTED */);
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "mr-4 text-gray-400"
-}, "hajmi", -1 /* HOISTED */);
+}, "Объем", -1 /* HOISTED */);
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "mr-4 text-gray-400"
-}, "mahsulot kategoriyasi", -1 /* HOISTED */);
+}, "Категория", -1 /* HOISTED */);
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "mr-4 text-gray-400"
-}, "Qoldiq:", -1 /* HOISTED */);
+}, "остаток:", -1 /* HOISTED */);
 var _hoisted_15 = {
   "class": "w-2/6 flex flex-col justify-between"
 };
@@ -466,7 +466,7 @@ var _hoisted_33 = {
 };
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "border-b-2 mx-4 font-medium py-4"
-}, " Xarid ma'lumotnomasi ", -1 /* HOISTED */);
+}, " Информация ", -1 /* HOISTED */);
 var _hoisted_35 = {
   "class": "flex justify-between mx-4 py-4 text-sm"
 };
@@ -515,12 +515,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return $setup.increment(item);
       }
     }, _hoisted_32, 8 /* PROPS */, _hoisted_30)])])]);
-  }), 256 /* UNKEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Mahsulotlar soni: "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$store.state.cart.length), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.summa), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), _hoisted_38])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }), 256 /* UNKEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("В корзине: "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$store.state.cart.length), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" товара")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.summa), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), _hoisted_38])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.agreement($setup.cart_user);
     }),
     "class": "border-b-2 border-orange-500 mx-4 text-xl hover:text-orange-500"
-  }, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Rasmiylashtirish ")])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_40, _hoisted_42))])], 64 /* STABLE_FRAGMENT */);
+  }, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("ОФОРМИТЬ ")])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_40, _hoisted_42))])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
