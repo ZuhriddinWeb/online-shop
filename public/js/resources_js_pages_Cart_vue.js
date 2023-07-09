@@ -165,8 +165,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "rgb(249 115 22)",
-                confirmButtonText: "Ha!",
-                cancelButtonText: "Yoq!",
+                confirmButtonText: "Да!",
+                cancelButtonText: "Нет!",
                 reverseButtons: true
               }).then(function (result) {
                 if (result.isConfirmed) {
