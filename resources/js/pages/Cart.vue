@@ -6,7 +6,6 @@
 
     <section class="w-full container mx-auto flex flex-col mt-0 py-3">
         <p class="text-2xl font-semibold mx-2">Корзина</p>
-        <!-- {{ $store.state.user.id }} -->
         <div class=" justify-between w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 mx-2"
             v-if="cart_user.length">
             <main class="flex flex-col justify-between  mr-3 md:w-2/3 lg:w-w-4/5">
